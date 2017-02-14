@@ -1,5 +1,5 @@
 {
-"params": {"siteTitle":"Witwat.net","paths":{"url":"/"}},
+"params": {"siteTitle":"lukehler.github.io","paths":{"url":"/"}},
 "page": {"title":"Home page","pageClass":"front"},
 "body": ["<h2>This is markdown</h2>\n<p>It's being template-ified.</p>\n","<h2>This is  a second section</h2>\n<div class=\"bg\"><p>This is an additional div added by the Markdown classRenderer</p>\n</div>"]
 }

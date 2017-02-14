@@ -1,5 +1,5 @@
 {
-"params": {"siteTitle":"Witwat.net","paths":{"url":"/"}},
+"params": {"siteTitle":"lukehler.github.io","paths":{"url":"/"}},
 "page": {"title":"About"},
 "body": ["<h2>This is a subpage</h2>\n<p>It's being template-ified.</p>\n"]
 }
