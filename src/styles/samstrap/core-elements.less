@@ -1,0 +1,301 @@
+/*	********************************
+ *	SAMSTRAP ELEMENTS
+ *	********************************
+ */
+
+// Adapted from Cutestrap
+// All vertical aligment based upon @vr.
+// All horizontal alignment based upon @grid (which defaults to @vr/2)
+
+// RESETS
+* {
+	border: 0;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+//	text-rendering: geometricPrecision;
+}
+html {
+	height: 100%;
+	// Putting font-size on the html element sets up rem measurements, which vary by viewport width
+	font-size: @rem-size;
+	scroll-behavior: smooth; // currently only Firefox, but under a flag in Chrome/Opera and under consideration in Edge
+	@media screen and ( min-width: @screen-md ) {
+		font-size: @rem-size-lg;
+	}
+}
+body {
+	background-color: @bg-color;
+	color: @text-color;
+	font-family: @body-font;
+	font-weight: @body-weight;
+	font-size: @font-size;
+	line-height: @line-height;
+	min-height: 100%;
+	position: relative;
+}
+
+// HEADINGS
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: @heading-font;
+	font-weight: @heading-weight;
+}
+h1,
+h2,
+h3 {
+	line-height: (@vr * 2); // 4.8rem
+	padding-top: (@vr * 1/3); // 0.8rem
+	padding-bottom: (@vr * 2/3); // 0 1.6rem
+}
+h4,
+h5,
+h6 {
+	padding-top: @vr; // 2.4rem
+	padding-bottom: @vr; // 2.4rem
+}
+h1 {
+	font-size: (@font-size * 10/4); // 4.0rem
+}
+h2 {
+	font-size: (@font-size * 8/4); // = @font-size*2 = 3.2rem
+}
+h3 {
+	font-size: (@font-size * 7/4); // 2.8rem
+}
+h4 {
+	font-size: (@font-size * 5/4); // 2.0rem
+}
+h5 {
+	font-size: (@font-size * 9/8); // 1.8rem;
+}
+h6 {
+	font-size: (@font-size); // 1.6rem;
+}
+// TBD: h1s, as page titles, often link to themselves, but don't need link styles, since it's not an active action, but a convention.
+h1 > a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		color: inherit;
+	}
+}
+
+// PARAGRAPHS
+p {
+	padding-bottom: @vr;
+}
+
+// PREFORMATTED AND BLOCK-LEVEL TEXT
+pre,
+code,
+samp,
+kbd {
+	.border-radius( @border-radius );
+	color: @vdgray;
+	background-color: @vlgray;
+	font-size: @font-size-sm;
+	font-family: @monospace;
+	line-height: 1; // this is effectively a reset. Anything less than 1.5 or 2.4rem does the trick.
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+code,
+samp,
+kbd {
+	padding: (@vr/6) (@grid/3) (@vr/12);// .4rem .4rem .2rem;
+}
+pre {
+	.border-radius( @border-radius );
+	line-height: @line-height;
+	padding: @vr/2 @grid;
+	margin: 0 0 @vr;
+	code,
+	samp,
+	kbd {
+		.border-radius( 0 );
+		background-color: transparent;
+		border: none;
+		padding: 0;
+	}
+}
+blockquote {
+	margin: 0 0 @vr;
+	border-left: 4px solid @primary;
+	padding: @vr/2 @grid @vr/2 @grid*2;
+	color: @vdgray;
+	font-family: @serif;
+	font-size: @font-size-lg;
+	& > :last-child {
+		padding-bottom: 0;
+	}
+	footer {
+		font-size: @font-size-sm;
+		font-style: italic;
+		&:before {
+			content: "— ";
+		}
+	}
+}
+
+
+// LISTS
+ol,
+ul {
+	margin-left: (@grid * 5/3);
+	padding: 0 0 @vr;
+	// this will enumerate all combinations of ol and ul, so: ol > ol, ul > ul, ol > ul, and ul > ol.
+	& & {
+		padding-bottom: 0;
+	}
+}
+ol {
+	list-style-type: decimal;
+}
+ul {
+	list-style-type: square;
+}
+dt {
+	font-style: italic;
+}
+dd {
+	padding-left: (@vr * 5/6);
+}
+
+// MEDIA
+img,
+video {
+	max-width: 100%;
+	display: block;
+}
+figure {
+	margin: 0 auto;
+	padding-bottom: @vr;
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+caption,
+figcaption {
+	font-size: @font-size-sm;
+	font-style: italic;
+	text-align: center;
+}
+
+// LINKS
+a {
+	color: @link;
+}
+a:hover,
+a:focus,
+a:active {
+	color: @link-hover;
+	text-decoration: underline;
+}
+
+// PHRASE-LEVEL ELEMENTS
+small,
+sub,
+sup {
+	font-size: @font-size-sm;
+	line-height: 1; // this is effectively a reset. Anything less than 1.5 or 2.4rem does the trick.
+}
+em,
+cite,
+i {
+	font-style: italic;
+}
+strong,
+var,
+b {
+	font-weight: 700;
+}
+q {
+	&:before {
+		content: "'";
+	}
+	&:after {
+		content: "'";
+	}
+	& > q {
+		font-style: italic;
+	}
+}
+dfn,
+abbr {
+	border-bottom: 1px dotted @dgray;
+	cursor: default;
+}
+
+// TABLES
+table {
+	.border-radius( @border-radius );
+	border-collapse: separate;
+	border-spacing: 0;
+	margin-bottom: @vr;
+	width: 100%;
+	background-color: @white;
+	max-width: 100%;
+	overflow-x: auto;
+}
+th {
+	font-weight: @heading-weight; // TBD: change this to always be bold?
+	text-align: left;
+}
+th, td {
+	padding: @vr/2 @grid/2;
+	border-top: 1px solid @lgray;
+	line-height: calc(@line-height ~'-' 1px);
+	& + & {
+		border-left: 1px solid @lgray;
+	}
+	& > :last-child {
+		padding-bottom: 0;
+	}
+}
+
+// FORMS
+input,
+label,
+select,
+button,
+textarea {
+	display: block;
+	resize: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+/* remove yellow from chrome auto-fill background */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	color: @dgray;
+	-webkit-text-fill-color: @dgray;
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+// TBD: move to mod-forms? Change default value?
+label {
+	color: @secondary;
+}
+
+// MISC
+hr {
+	height: (@vr * 2);
+	margin-bottom: 0;
+	position: relative;
+	&:before {
+		background-color: @lgray;
+		content: '';
+		height: 1px;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+	}
+}

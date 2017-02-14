@@ -1,0 +1,31 @@
+{
+  "name": "witwat",
+  "title": "Witwat.net",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main",
+    "build": "grunt prod"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "js-yaml": "^3.7.0",
+    "lodash.template": "^4.4.0",
+    "markdown-it": "^8.2.2",
+    "markdown-it-container": "^2.0.0",
+    "postcss-cssnext": "^2.5.1",
+    "postcss-flexboxfixer": "^0.0.4",
+    "postcss-gradientfixer": "^0.0.5"
+  }
+}

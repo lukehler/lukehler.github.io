@@ -1,0 +1,76 @@
+/*	********************************
+ *	SAMSTRAP MODULE: Panes
+ *	********************************
+ */
+
+// Mod panes create resuable widget-like regions.
+
+.pane {
+	margin-bottom: @vr;
+	display: block; // so you can use a.pane, for example
+}
+.pane-content,
+.pane-header {
+	.border-radius( @border-radius );
+	padding: @vr/2 @grid;
+	border: 1px solid @lgray;
+	margin: -1px 0;
+	background-color: @white;
+	& > :last-child {
+		padding-bottom: 0;
+	}
+}
+.pane-header {
+	.border-radius ( @border-radius @border-radius 0 0 );
+	border-bottom: none;
+	& + .pane-content {
+		.border-radius ( 0 0 @border-radius @border-radius );
+	}
+	a {
+		color: inherit;
+	}
+}
+.pane-primary {
+	.pane-header,
+	.pane-content {
+		border-color: @primary;
+	}
+	.pane-header {
+		.bg( @primary );
+	}
+}
+.pane-secondary {
+	.pane-header,
+	.pane-content {
+		border-color: @secondary;
+	}
+	.pane-header {
+		.bg( @secondary );
+	}
+}
+.pane-dark {
+	.pane-header,
+	.pane-content {
+		border-color: @vdgray;
+	}
+	.pane-header {
+		.bg( @dgray );
+	}
+}
+.pane-light {
+	.pane-header,
+	.pane-content {
+		border-color: @lgray;
+	}
+	.pane-header {
+		.bg( @vlgray, @text-color );
+	}
+}
+// Some special cases for making block-level links out of panes
+a.pane {
+	color: inherit;
+	text-decoration: inherit;
+	&:hover {
+		opacity: 0.95; // Just add a touch of a state change, since we're hiding the underline.
+	}
+}

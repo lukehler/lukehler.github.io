@@ -1,0 +1,121 @@
+/*
+ *	Core Samstrap
+ */
+
+// Starting with the variables...
+	@import (reference) 'samstrap/core-variables.less';
+
+	// Set any overrides here
+		@border-radius:	0;
+		@grid-count:	2; // Just using 50-50 layout in this case. might as well make it easy.
+		@primary:		#e70;
+		@secondary:		#07a; // reusing secondary color as primary because we really only need one
+		@dgray:			#3a3936;
+
+// Continue to load the mixins, now that we have our variables.
+	// Can either load entire default core-mixins.less file to use all the default mixins...
+	@import (reference) 'samstrap/core-mixins.less';
+	// Or you can call each file individually. This is more verbose, but lets you use a custom mixin file instead.
+	// The use case would be if you wanted completely different styles for .disabled(), for example, you could load the following:
+	//	@import (reference) "samstrap/mixins/mixins-backgrounds.less";
+	//	@import (reference) "samstrap/mixins/mixins-buttons.less";
+	//	@import (reference) "samstrap/mixins/mixins-embed.less";
+	//	@import (reference) "samstrap/mixins/mixins-grid.less";
+	//	@import (reference) "custom/my-custom-utilities.less";
+
+// With all the mixins covered, load the elements and classes.
+	@import 'samstrap/core-elements.less';
+	@import 'samstrap/core-classes.less';
+
+// Now load any modules you'd like to use. For example:
+	// @import 'samstrap/mod-forms.less';
+	// There is no grid module loaded here in this case, but we have the mixins and can just use those in LESS. Same goes for buttons.
+
+// Set up a little vertical flex to stick the footer to the bottom.
+body {
+	display: flex;
+	flex-direction: column;
+	main {
+		flex-grow: 1;
+		> .wrapper {
+			margin-top: @vr;
+			margin-bottom: @vr;
+		}
+	}
+}
+
+// Set up the site header and footer
+#site-header,
+#site-footer {
+	.bg(); // from mixins-backgrounds
+}
+#site-header {
+	padding-bottom: 0; // remove extra padding from .bg();
+}
+#site-footer {
+	font-size: @font-size-sm;
+}
+
+// make the header-inner a grid row to position the nav elements
+.header-inner {
+	.grid-row( false ); // from mixins-grid, no need for inner wrappers, here
+	h1,
+	nav {
+		.grid-item( 1 ); // from mixins-grid - note that it's 1/2 because @grid-count
+		margin-bottom: 0;
+	}
+}
+
+.bg {
+	.bg();
+}
+
+// Some really generic nav styles
+nav {
+	ul {
+		// resetting core-elements ul styles
+		list-style: none;
+		margin-left: 0;
+		padding-bottom: 0;
+	}
+	li {
+		display: block;
+		// align nicely with the site title
+		margin-top: @vr/2;
+	}
+	a {
+		.btn( @primary, @primary-over, lighten( @primary, 10% ) ); // from mixins-buttons
+		// overriding some of the default .btn styles
+		display: block;
+		height: auto;
+	}
+	// And since the header gets wider at desktop, might as well tidy up the nav.
+	@media screen and ( min-width: @screen-sm ) {
+		ul {
+			text-align: right;
+		}
+		li {
+			display: inline-block;
+			margin-right: @grid;
+		}
+	}
+}
+// CV-specific pages
+.cv {
+	#main-content .content-section {
+		padding-left: 1rem;
+		border-left: 3px solid @primary;
+		& > * {
+			max-width: 80rem;
+		}
+		& > ul {
+			max-width: 100%;
+			margin-left: 0;
+			list-style: none;
+			@media ( min-width: @screen-sm ) {
+				column-count: 2;
+				column-gap: @grid*2;
+			}
+		}
+	}
+}
