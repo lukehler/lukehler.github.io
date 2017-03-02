@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if (lt IE 9) ]>			<html lang="en" class="no-js oldie">	<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->	<html lang="en" class="no-js">		<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Northeastern University College of Computer and Information Science | lukehler</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/style.min.css" />
+	<script>
+		// Toggle on the .js class if javascript is available
+		var html=document.getElementsByTagName('html').item(0); // There can be only one.
+		html.classList.remove('no-js');
+		html.classList.add('js');
+		// Note that the html variable is available for further javascript as well.
+	</script>	
+</head>
+<body>
+	<a id="top" href="#main-content" class="skip-link">Skip to main content</a>
+	<header id="site-header" role="banner">
+		<div class="header-inner">
+			<h1 id="site-identifier"><a href="/">lukehler</a></h1>
+			<nav role="navigation">
+				<ul>
+					<li><a href="/">portfolio</a>
+					<li><a href="/cv">c.v.</a>
+					<li><a href="#contact">contact</a>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<address role="contentinfo" id="contact">
+		<div class="wrapper">
+			<a href="mailto:luke@witwat.net">luke@witwat.net</a>
+			<a href="tel:6179132299">617.913.2299</a>
+		</div>
+	</address>
+
+	<main id="main-content" role="main">
+		<div class="wrapper">
+
+
+			<h1 id="page-title">Northeastern University College of Computer and Information Science</h1>
+
+
+
+
+
+			<section class="content-section">
+
+<p><em>created at Sametz Blackstone Associates</em></p>
+<p>The Northeastern College of Computer and Information Science is expanding and changing rapidly. With a heavy focus on cross-disciplinary programs, an innovative and effective cooperative outreach program, and a pragmatic focus on industry involvement, the college needed to address a number of audiences and accommodate the recent University-wide rebranding effort, but plan for future enhancement and growth as well.</p>
+
+			</section>
+
+			<section class="content-section">
+
+<h2>The approach</h2>
+<p>With a background and excellent infrastructure for Wordpress already in place from the outset, the choice of CMS was a straightforward one. Using the platform to create a number of highly-structured custom content types and taxonomies to cross-promote academic programs, research areas, faculty and staff, news, labs, and groups was a clear start. The relational content, though tangled and highly customized to accommodate internal and external priorities, proved challenging but, ultimately, rewarding.</p>
+<p>The custom theme (starting with a barebones toolkit created for internal use) was heavily weighted towards splitting front end markup into two primary template types—<em>page</em> templates and <em>content</em> templates. With a handful of exceptions (the home page, the People index, and a few other highly-customized pages), the page templates are kept surprisingly simple and consistent. In general, they're simply the basic infrastructure of the page, with a minimal amount of adjustment, including triggering a handful of custom query variables to handle the dynamic sorting.</p>
+<p>The site architecture included a number of disambiguation pages—referred to internally as grid indices—in which the main content of a given page provided a customized view of a mix of on- and off-site links with a large, bold presentation. Native Wordpress menus were used to build the combination of internal and external links allowed the editorial staff a consistent experience while editing and maintainging the site, with an additional accommodation to allow staff-maintained featured images for offsite menu links.</p>
+<p>The most peril-fraught dynamic content issue, as is often the case, is the ordering and sorting of People. Internal policies and hierarchies rarely align with programmatic conventions. Fortunately, during a marathon conference call, we managed to isolate the concerns and tick through all the individual fringe cases and potential overlaps. In the end, I had to make a custom query builder to group indivdiuals by criteria such as their role within the college, their association with the college, and administrative status. The final results accurately reflect the College's priorities and make vital faculty members readily available throughout the site.</p>
+<p>We were fortunate that, as one would expect, the client team had some excellent resources at their disposal. Accordingly, we had to plan ahead to not only allow but to encourage the internal team to take ownership over and modify the site accordingly after launch. The CSS framework, for example, was created by preprocessing Twitter Bootstrap components and was not conducive to alteration. To accommodate that concern, we simply added a client-specific stylesheet, outside of our version control. That allowed us to continue work on phase 2, using our existing build process, while allowing the in-house team to make small adjustments non-destructively and help keep our working copy up to date via our shared repository.</p>
+
+			</section>
+
+			<section class="content-section">
+
+<h2>The numbers</h2>
+<div class="by-the-numbers"><ul>
+<li><strong>7</strong> different custom content types (in addition to the basic Pages and Posts)</li>
+<li><strong>5</strong> unique &quot;By the Numbers&quot; flyouts</li>
+<li><strong>19</strong> content templates for different types and instances</li>
+<li><strong>4</strong> developers working on independent modularized features</li>
+</ul>
+</div>
+			</section>
+
+
+		</div>
+	</main>
+
+	<footer id="site-footer">
+		<p>&copy; 2017
+	</footer>
+
+	<script src="/script.min.js"></script>
+
+
+	<!-- remove livereload line for delivery! -->
+	<script src="//localhost:2112/livereload.js"></script>
+
+</body>
+</html>

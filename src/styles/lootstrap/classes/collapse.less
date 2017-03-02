@@ -1,0 +1,24 @@
+//	********************************
+//	LOOTSTRAP CONTAINER
+//	********************************
+
+
+// There isn't a mixin for this because it's pretty specific. Not an ideal option, but an option.
+// You could alternately add the same styles in style.less or a custom include and apply this to all tables.
+// The headers are much, much less than legible and it seems likely that a unique, site-specific option would be preferable.
+// However, it's here and available.
+@media screen and ( max-width: @screen-xs-max ) {
+	table.collapse {
+		tr, th, td {
+			display: block;
+			border-left: 0;
+			border-top: 0;
+			line-height: @line-height;
+		}
+		tr {
+			border-top: 1px solid @lgray;
+			margin-top: -1px;
+		}
+	}
+}
+

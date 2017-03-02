@@ -11,6 +11,56 @@ module.exports = function(grunt) {
 	var paths = grunt.config.get('paths');
 	var pkg = grunt.config.get('pkg');
 
+	// CONFIGURATION
+	grunt.config.set(
+		'custommarkdown',
+		{
+			options: {
+				markdownItOptions: {
+					html: true,
+					linkify: true
+				},
+				templateParams: {
+					siteTitle: pkg.title,
+					'paths': { url: paths.url }, // make paths.url available to the template
+				},
+				templateFile: paths.src + '/templates/template.tmpl',
+			},
+			contents: {
+				files: [
+					{
+						expand: true,
+						cwd: paths.src + '/content/',
+						src: [
+							'*.md',
+							'**/*.md',
+						],
+						dest: paths.dest + '/',
+						ext: '.html',
+					},
+				],
+			},
+			// run through the source files again and create _page_.json in the same location
+			json: {
+				options: {
+					templateFile: paths.src + '/templates/json-template.tmpl',
+				},
+				files: [
+					{
+						expand: true,
+						cwd: paths.src + '/content/',
+						src: [
+							'*.md',
+							'**/*.md',
+						],
+						dest: paths.tmp + '/',
+						ext: '.json',
+					},
+				],
+			}
+		}
+	);
+
 	// Set up requirements for custom task
 	var template = require("lodash.template"),
 		yaml = require("js-yaml");
@@ -33,7 +83,6 @@ module.exports = function(grunt) {
 		MarkdownItCheckbox	= req("markdown-it-checkbox"),
 		MarkdownItSmartarrows = req("markdown-it-smartarrows"),
 		MarkdownItHighlightjs = req("markdown-it-highlightjs");
-
 	// md-it-container helper function
 	// allows use of the following to make div.container wrappers
 		//	::: class: container
@@ -51,65 +100,15 @@ module.exports = function(grunt) {
 			return tokens[idx].nesting === 1 ? "<div class=\"" + m[1] + "\">" : "</div>";
 		}
 	};
-	// conditional require()
+	// conditional require() for the markdown-it plugins
 	function req (name) {
 		try {
 			return require(name);
 		} catch (e) {
-			// suppress
+			// suppress errors, as it's not actually an error, the plugin just isn't needed in this project.
 		}
 		return null;
 	}
-
-	// CONFIGURATION
-	grunt.config.set(
-		'custommarkdown',
-		{
-			options: {
-				markdownItOptions: {
-					html: true,
-					linkify: true
-				},
-				templateParams: {
-					siteTitle: pkg.title,
-					'paths': { url: paths.url }, // make paths.url available to the template
-				},
-				templateFile: paths.src + '/templates/template.ejs',
-			},
-			contents: {
-				files: [
-					{
-						expand: true,
-						cwd: paths.src + '/content/',
-						src: [
-							'*.md',
-							'**/*.md',
-						],
-						dest: paths.dest + '/',
-						ext: '.html',
-					},
-				],
-			},
-			// run through the source files again and create _page_.json in the same location
-			json: {
-				options: {
-					templateFile: paths.src + '/templates/json-template.ejs',
-				},
-				files: [
-					{
-						expand: true,
-						cwd: paths.src + '/content/',
-						src: [
-							'*.md',
-							'**/*.md',
-						],
-						dest: paths.dest + '/',
-						ext: '.json',
-					},
-				],
-			}
-		}
-	);
 
 	// THE TASK
 	// Again, heavily derived from grunt-slice-front, but streamlined a bit.
@@ -119,7 +118,7 @@ module.exports = function(grunt) {
 			var done = this.async(),
 				options = this.options({
 					splitter:     /^(?:\-(?:\s*\-){2,})|(?:_(?:\s*_){2,})|(?:\*(?:\s*\*){2,})\s*$/gm,
-					templateFile: 'nonexistenttemplate.ejs', // We provide a nonexistent template file here and just use a simple string as the fallback
+					templateFile: 'non-existent-template', // We provide a nonexistent template file here and just use a simple string as the fallback
 					mdPlugins: [
 						MarkdownItAbbr,
 						MarkdownItCheckbox,

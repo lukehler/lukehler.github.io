@@ -3,10 +3,10 @@
 <!--[if (gte IE 9)|!(IE)]><!-->	<html lang="en" class="no-js">		<!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>Portfolio | lukehler</title>
+	<title><%= page.title %> | <%= params.siteTitle %></title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/style.min.css" />
+	<link rel="stylesheet" href="<%= params.paths.url %>style.min.css" />
 	<script>
 		// Toggle on the .js class if javascript is available
 		var html=document.getElementsByTagName('html').item(0); // There can be only one.
@@ -15,15 +15,15 @@
 		// Note that the html variable is available for further javascript as well.
 	</script>	
 </head>
-<body class="front portfolio">
+<body<% if( typeof page.pageClass !== 'undefined' ) { %> class="<%= page.pageClass %>"<% } %>>
 	<a id="top" href="#main-content" class="skip-link">Skip to main content</a>
 	<header id="site-header" role="banner">
 		<div class="header-inner">
-			<h1 id="site-identifier"><a href="/">lukehler</a></h1>
+			<h1 id="site-identifier"><a href="<%= params.paths.url %>"><%= params.siteTitle %></a></h1>
 			<nav role="navigation">
 				<ul>
-					<li><a href="/">portfolio</a>
-					<li><a href="/cv">c.v.</a>
+					<li><a href="<%= params.paths.url %>">portfolio</a>
+					<li><a href="<%= params.paths.url %>cv">c.v.</a>
 					<li><a href="#contact">contact</a>
 				</ul>
 			</nav>
@@ -38,36 +38,39 @@
 
 	<main id="main-content" role="main">
 		<div class="wrapper">
+<% if( page.pageClass === 'cv') { %>
+	<address role="contentinfo" id="print-contact">
+		<a href="mailto:luke@witwat.net">luke@witwat.net</a>
+		<a href="tel:6179132299">617.913.2299</a>
+	</address>
+<% } %>
+
+			<h1 id="page-title"><%= page.title %></h1>
+
+<% if( page.links && page.links.length > 0 ) {%>
+<% page.links.forEach(function(link, index){ %>
+<% var key = Object.keys(link)[0] %>
+	<a href="<%= link[key] %>" rel="noreferrer nofollow"><%= key %></a>
+<% }); %>
+<% } %>
 
 
-			<h1 id="page-title">Portfolio</h1>
-
-
-
-
-
+<% body.forEach(function(section){ %>
 			<section class="content-section">
 
-<p>Paragraph has to come first</p>
-<ul>
-<li><a href="/ccis">Northeastern University College of Computer &amp; Information Science</a></li>
-<li><a href="/gordon">Gordon Brothers</a></li>
-<li><a href="/jem">J.E.M. home furnishings</a></li>
-<li><a href="/skinner">Skinner Auctioneers</a></li>
-</ul>
-
+<%= section %>
 			</section>
-
+<% }); %>
 
 		</div>
 	</main>
 
 	<footer id="site-footer">
-		<p>&copy; 2017
+		<p>&copy; <%= new Date().getFullYear() %>
 	</footer>
 
-	<script src="/script.min.js"></script>
-
+	<script src="<%= params.paths.url %>script.min.js"></script>
+<% if( page.isPortfolio === true ) { %>
 	<script id="project-template" type="template">
 
 <a class="project {{ category }}" href="{{ path }}" style="{{ color }} {{ image }}">
@@ -75,7 +78,7 @@
 </a>
 
 	</script>
-
+<% } %>
 
 	<!-- remove livereload line for delivery! -->
 	<script src="//localhost:2112/livereload.js"></script>

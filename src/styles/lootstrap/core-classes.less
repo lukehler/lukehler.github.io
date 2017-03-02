@@ -1,0 +1,28 @@
+/*	********************************
+ *	LOOTSTRAP CLASSES
+ *	********************************
+ */
+
+// Unlike mixins, these can be used in markup or as mix-ins, if desired.
+// These are just really common cases.
+// Each is broken out into its own file, so you can override them if desired.
+
+// See individual classes files for properties... but primarily just implementing mixins.
+@import "lootstrap/classes/container.less";
+@import "lootstrap/classes/disabled.less";
+@import "lootstrap/classes/backgrounds.less";
+@import "lootstrap/classes/collapse.less";
+@import "lootstrap/classes/embed.less";
+@import "lootstrap/classes/clearfix.less";
+
+// For the defaults, in style.less, simply import this file:
+	// import "lootstrap/core-classes.less"
+
+// If you want to override one or more of the core classes, you can copy the contents from this file...
+// ... preface them with the library path, and include your custom override(s) instead of the defaults:
+	// @import "lootstrap/classes/container.less";
+	// @import "lootstrap/classes/disabled.less";
+	// @import "lootstrap/classes/backgrounds.less";
+	// @import "lootstrap/classes/collapse.less";
+	// @import "lootstrap/classes/embed-wrapper.less";
+	// @import "lootstrap/classes/clearfix.less";

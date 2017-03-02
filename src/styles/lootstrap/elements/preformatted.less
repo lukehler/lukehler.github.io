@@ -1,0 +1,38 @@
+//	********************************
+//	LOOTSTRAP CORE PREFORMATTED
+//	********************************
+
+
+// PREFORMATTED AND BLOCK-LEVEL TEXT
+pre,
+code,
+samp,
+kbd {
+	.border-radius( @border-radius );
+	color: @vdgray;
+	background-color: @vlgray;
+	font-size: @font-size-sm;
+	font-family: @monospace;
+	line-height: 1; // this is effectively a reset. Anything less than 1.5 or 2.4rem does the trick.
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+code,
+samp,
+kbd {
+	padding: (@vr/6) (@grid/3) (@vr/12);// .4rem .4rem .2rem;
+}
+pre {
+	.border-radius( @border-radius );
+	line-height: @line-height;
+	padding: @vr/2 @grid;
+	margin: 0 0 @vr;
+	code,
+	samp,
+	kbd {
+		.border-radius( 0 );
+		background-color: transparent;
+		border: none;
+		padding: 0;
+	}
+}

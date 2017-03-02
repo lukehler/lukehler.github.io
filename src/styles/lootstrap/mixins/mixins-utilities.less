@@ -1,0 +1,21 @@
+//	********************************
+//	LOOTSTRAP UTILITY MIXINS
+//	********************************
+
+// UTILITY MIXINS
+	// .clearfix()
+	// .transition()
+
+// Utility mixins don't have direct class name equivalents. Instead, these are shorthand helpers to make your LESS less verbose.
+
+// Only add border-radius properties if @border-radius > 0.
+// If you just add `border-radius: @br;`, the resultant CSS is slightly more verbose and could have unintended side effects. So let's not include it at all, unless it's relevant.
+.border-radius( @br ) when ( @border-radius > 0 ){
+	border-radius: @br;
+}
+
+// Opacity, transform, color, and background-color are the most useful and common transitions, so making those the default.
+.transition( @props: opacity, transform, color, background-color; @duration: @fast; ) {
+	transition-property: @props;
+	transition-duration: @duration;
+}

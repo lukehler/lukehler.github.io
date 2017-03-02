@@ -1,0 +1,79 @@
+/*	********************************
+ *	LOOTSTRAP MODULE: ACCORDIONS
+ *	********************************
+ */
+
+.accordions {
+	margin-bottom: @vr;
+}
+.accordion {
+	margin-bottom: 0; // only comes up when using panes.
+}
+.accordion-header {
+	border: 1px solid @lgray;
+	display: block; // in case an a is used for the header
+	margin-bottom: -2px;
+	margin-top: -1px;
+	padding-left: @grid;
+	padding-right: @grid;
+	background-color: @white;
+	position: relative; // make sure the accordion header sits over the spacer.
+	a {
+		display: block;
+	}
+}
+// Set up a spacer above, so going to this hash puts the current item below the navbar
+.accordion:before {
+	content: " ";
+	position: relative;
+	height: @vr*2;
+	margin-top: -@vr*2;
+	width: 1px;
+	visibility: hidden;
+	display: block;
+	overflow: hidden;
+	z-index: @z-0; // put this behind the other accordions.
+}
+.accordion-content {
+	padding-left: @grid;
+	padding-right: @grid;
+	border: 1px solid @lgray;
+	border-top-width: 0;
+	margin-bottom: -1px;
+	max-height: 0;
+	opacity: 0;
+	transition-duration: 0.2s;
+	transition-property: max-height, opacity;
+	overflow: hidden;
+}
+.accordion:target {
+	.accordion-content {
+		opacity: 1;
+		max-height: none; // NOTE: this will not transition. However, you can add max-height styles on 
+		padding-top: @vr/2;
+		// force the padding on the last item to make the padding consistent all around.
+		& > :last-child {
+			padding-bottom: @vr/2;
+		}
+	}
+}
+
+
+.accordion-primary {
+	.accordion-header {
+		.bg( @primary, @primary-over );
+		border-color: @primary;
+		border-top-color: @white;
+		a {
+			color: inherit;
+		}
+	}
+	.accordion-content {
+		border-color: @primary;
+	}
+	&.accordion:target {
+		.accordion-header {
+			background-color: @link-hover;
+		}
+	}
+}

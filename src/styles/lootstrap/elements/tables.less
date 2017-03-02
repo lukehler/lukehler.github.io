@@ -1,0 +1,33 @@
+//	********************************
+//	LOOTSTRAP CORE TABLES
+//	********************************
+
+
+// TABLES
+table {
+	.border-radius( @border-radius );
+	border-collapse: separate;
+	border-spacing: 0;
+	margin-bottom: @vr;
+	width: 100%;
+	background-color: @white;
+	max-width: 100%;
+	overflow-x: auto;
+}
+th {
+	font-weight: @heading-weight; // TBD: change this to always be bold?
+	text-align: left;
+}
+th, td {
+	padding: @vr/2 @grid/2;
+	border-top: 1px solid @lgray;
+	line-height: calc(@line-height ~'-' 1px);
+	& + & {
+		border-left: 1px solid @lgray;
+	}
+	& > :last-child {
+		padding-bottom: 0;
+	}
+}
+
+// See also ../classes/collapse.less for table.collapse styles

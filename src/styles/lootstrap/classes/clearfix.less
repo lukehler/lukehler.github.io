@@ -1,0 +1,19 @@
+//	********************************
+//	LOOTSTRAP CLEARFIX
+//	********************************
+
+
+
+// NOTE: the .clearfix() mixin extends this class.
+// So using .clearfix() in your code will add it as a selector here, at this spot in the stylesheet.
+.clearfix,
+.cf {
+	*zoom: 1;
+	clear: both;
+	&:after {
+		content:"";
+		*zoom: 1;
+		clear: both;
+		display: table;
+	}
+}

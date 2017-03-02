@@ -1,0 +1,38 @@
+//	********************************
+//	LOOTSTRAP CORE RESETS
+//	********************************
+
+
+// RESETS
+
+// Derived from Cutestrap, we've got a very, very aggressive reset.
+* {
+	border: 0;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+//	text-rendering: geometricPrecision; // TBD: causes unpleasant issues with transitions with light on dark text
+}
+
+html {
+	height: 100%;
+	// Putting font-size on the html element sets up rem measurements, which vary by viewport width
+	font-size: @rem-size;
+	scroll-behavior: smooth; // currently only Firefox, but under a flag in Chrome/Opera and under consideration in Edge
+	@media screen and ( min-width: @screen-md ) {
+		font-size: @rem-size-lg;
+	}
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	background-color: @bg-color;
+	color: @text-color;
+	font-family: @body-font;
+	font-weight: @body-weight;
+	font-size: @font-size;
+	line-height: @line-height;
+}
+

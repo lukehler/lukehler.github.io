@@ -1,45 +1,72 @@
 /*
- *	Core Samstrap
+ *	Core lootstrap
  */
 
 // Starting with the variables...
-	@import (reference) 'samstrap/core-variables.less';
+	@import (reference) 'lootstrap/core-variables.less';
 
 	// Set any overrides here
 		@border-radius:	0;
 		@grid-count:	2; // Just using 50-50 layout in this case. might as well make it easy.
-		@primary:		#e70;
-		@secondary:		#07a; // reusing secondary color as primary because we really only need one
+		@primary:		#d70;
+		@secondary:		#07a;
 		@dgray:			#3a3936;
+		@link-hover: 	@secondary;
+		@fast:			0.3s;
 
 // Continue to load the mixins, now that we have our variables.
 	// Can either load entire default core-mixins.less file to use all the default mixins...
-	@import (reference) 'samstrap/core-mixins.less';
-	// Or you can call each file individually. This is more verbose, but lets you use a custom mixin file instead.
-	// The use case would be if you wanted completely different styles for .disabled(), for example, you could load the following:
-	//	@import (reference) "samstrap/mixins/mixins-backgrounds.less";
-	//	@import (reference) "samstrap/mixins/mixins-buttons.less";
-	//	@import (reference) "samstrap/mixins/mixins-embed.less";
-	//	@import (reference) "samstrap/mixins/mixins-grid.less";
-	//	@import (reference) "custom/my-custom-utilities.less";
+	@import (reference) 'lootstrap/core-mixins.less';
 
 // With all the mixins covered, load the elements and classes.
-	@import 'samstrap/core-elements.less';
-	@import 'samstrap/core-classes.less';
+	@import 'lootstrap/core-elements.less';
+	@import 'lootstrap/core-classes.less';
 
-// Now load any modules you'd like to use. For example:
-	// @import 'samstrap/mod-forms.less';
-	// There is no grid module loaded here in this case, but we have the mixins and can just use those in LESS. Same goes for buttons.
+#top {
+	.skip-link();
+}
 
+// For those who show their scroll bars, make sure that space is always carved out for it, so that the center alignment doesn't jump between short and long pages.
+html {
+	overflow-y: scroll;
+}
 // Set up a little vertical flex to stick the footer to the bottom.
-body {
-	display: flex;
-	flex-direction: column;
-	main {
-		flex-grow: 1;
-		> .wrapper {
-			margin-top: @vr;
-			margin-bottom: @vr;
+@media screen {
+	body {
+		display: flex;
+		flex-direction: column;
+		main {
+			flex-grow: 1;
+			> .wrapper {
+				margin-top: @vr;
+				margin-bottom: @vr;
+			}
+		}
+	}
+}
+a {
+	transition-property: background, color, border-color;
+	transition-duration: @fast;
+}
+h3 {
+	padding-top: calc( @vr/3 ~'-' 1px );
+	border-top: 1px solid @lgray;
+	margin-top: @vr/2;
+}
+h4 {
+	padding-top: 0;
+	span {
+		display: block;
+		float: right;
+	}
+}
+main {
+	a {
+		text-decoration: none;
+		border-bottom: 1px dashed @link-hover;
+		&:hover {
+			text-decoration: none;
+			border-bottom-color: @link;
 		}
 	}
 }
@@ -47,13 +74,23 @@ body {
 // Set up the site header and footer
 #site-header,
 #site-footer {
-	.bg(); // from mixins-backgrounds
+	background-color: @dgray;
+	color: @white;
+	a {
+		color: inherit;
+	}
+	padding: 0 @vr/2 @vr/2;
 }
-#site-header {
-	padding-bottom: 0; // remove extra padding from .bg();
+#site-identifier {
+	font-size: 2.4rem;
+	padding-bottom: 0;
+	@media screen and ( min-width: @screen-sm ) {
+		font-size: 3.6rem;
+	}
 }
 #site-footer {
 	font-size: @font-size-sm;
+	padding-top: @vr/2;
 }
 
 // make the header-inner a grid row to position the nav elements
@@ -66,47 +103,51 @@ body {
 	}
 }
 
-.bg {
-	.bg();
-}
-
 // Some really generic nav styles
 nav {
 	ul {
 		// resetting core-elements ul styles
 		list-style: none;
-		margin-left: 0;
 		padding-bottom: 0;
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -@vr/2;
+		margin-right: -@vr/2;
 	}
 	li {
 		display: block;
 		// align nicely with the site title
 		margin-top: @vr/2;
+		flex: 1 1 auto;
 	}
 	a {
-		.btn( @primary, @primary-over, lighten( @primary, 10% ) ); // from mixins-buttons
+		.btn( @link, @primary-over, @link-hover ); // from mixins-buttons
 		// overriding some of the default .btn styles
 		display: block;
 		height: auto;
+		margin-left: @vr/2;
+		margin-right: @vr/2;
 	}
 	// And since the header gets wider at desktop, might as well tidy up the nav.
 	@media screen and ( min-width: @screen-sm ) {
 		ul {
 			text-align: right;
+			display: block;
+			margin: 0;
 		}
 		li {
 			display: inline-block;
-			margin-right: @grid;
 		}
 	}
 }
 // CV-specific pages
-.cv {
-	#main-content .content-section {
-		padding-left: 1rem;
-		border-left: 3px solid @primary;
-		& > * {
-			max-width: 80rem;
+#main-content {
+	.content-section {
+		padding-bottom: @vr * 2;
+		@media screen and ( min-width: @screen-sm ) {
+			& > * {
+				max-width: 70rem;
+			}
 		}
 		& > ul {
 			max-width: 100%;
@@ -119,3 +160,142 @@ nav {
 		}
 	}
 }
+// Main portfolio page
+.portfolio {
+	@media screen and ( min-width: @screen-sm ) {
+		#main-content {
+			display: flex;
+			flex-wrap: wrap;
+			align-content: flex-start;
+			justify-content: flex-start;
+		}
+	}
+	.project {
+		position: relative;
+		flex: 1 1 auto;
+		display: flex;
+		align-items: flex-end;
+		opacity: 0.9;
+		background-color: @primary;
+		background-size: cover;
+		background-position: top center;
+		color: @primary-over;
+		transition-duration: @fast;
+		transition-property: opacity, background-color;
+		border-bottom: 1px solid @white;
+		height: 24rem;
+		width: 100%;
+		&:first-child {
+			border-top: 1px solid @white;
+		}
+		@media ( min-width: @screen-sm ) {
+			width: 36rem;
+			max-width: 60rem;
+			border: 1px solid @white;
+		}
+		h2 {
+			flex: 0 0 100%;
+			margin-top: @vr * 2;
+			padding: @vr/2 @grid;
+			font-family: @sans;
+			font-size: @font-size;
+			line-height: @line-height;
+			background-color: fade( @text-color, 75% );
+			transition-duration: @fast;
+			transition-property: padding-bottom;
+		}
+		&:hover {
+			opacity: 1;
+			h2 {
+				padding-bottom: @vr * 3/2;
+			}
+		}
+	}
+}
+
+#contact {
+	background-color: @secondary;
+	color: @secondary-over;
+	padding-top: 0;
+	padding-bottom: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition-duration: @fast;
+	transition-property: max-height, padding;
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	a {
+		display: block;
+		flex: 0 0 auto;
+		color: inherit;
+		border-bottom: 1px dashed fade( @secondary-over, 0 );
+		text-decoration: none;
+		&:hover {
+			border-bottom-color: @secondary-over;
+		}
+	}
+	&:target {
+		max-height: @vr*2;
+		padding-top: @vr/2;
+		padding-bottom: @vr/2;
+	}
+}
+
+#print-contact {
+	float: right;
+	padding-top: @vr/2;
+	padding-bottom: @vr/2;
+	text-align: right;
+	a {
+		display: block;
+		border-bottom: 0;
+	}
+}
+
+@media print {
+	html {
+		font-size: @rem-size * 3/4;
+	}
+	*,
+	*:before,
+	*:after {
+		background-color: white !important;
+		color: black !important;
+		border-color: black !important;
+	}
+	#site-header,
+	#site-footer {
+		display: none;
+	}
+	#main-content {
+		a {
+			border-bottom: 0;
+		}
+		h3 + ul > li {
+			margin-bottom: @vr/4;
+		}
+	}
+	#page-title + .content-section {
+		border-top: 1px solid black;
+		margin-top: @vr/2;
+		padding-top: @vr;
+	}
+	h2 {
+		break-before: always;
+		page-break-before: always;
+	}
+	#page-title + .content-section,
+	.content-section:last-child {
+		& > h2 {
+			break-before: avoid;
+			page-break-before: avoid;
+		}
+	}
+}
+
+
+//body {
+//	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAeAQMAAAAxci3AAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMANrkpWKEAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVAiZY2AgGzwAAAEcAOFHPV40AAAAAElFTkSuQmCC') repeat left top
+//}

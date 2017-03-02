@@ -1,0 +1,28 @@
+//	********************************
+//	LOOTSTRAP CORE LISTS
+//	********************************
+
+
+// LISTS
+ol,
+ul {
+	margin-left: (@grid * 5/3);
+	padding: 0 0 @vr;
+	// this will enumerate all combinations of ol and ul, so: ol > ol, ul > ul, ol > ul, and ul > ol.
+	& & {
+		padding-bottom: 0;
+	}
+}
+ol {
+	list-style-type: decimal;
+}
+ul {
+	list-style-type: square;
+}
+dt {
+	font-style: italic;
+}
+dd {
+	padding-left: (@vr * 5/6);
+}
+

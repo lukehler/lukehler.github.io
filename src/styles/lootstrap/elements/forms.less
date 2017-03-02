@@ -1,0 +1,208 @@
+//	********************************
+//	LOOTSTRAP CORE FORMS
+//	********************************
+
+
+// This is a port of Cutestrap form styles.
+// Optionally include this to make everything match the Cutestrap styles, requiring the Cutestrap markup.
+
+// CORE FORMS STYLES
+input,
+label,
+select,
+button,
+textarea {
+	display: block;
+	resize: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+/* remove yellow from chrome auto-fill background */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	color: @dgray;
+	-webkit-text-fill-color: @dgray;
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+// TBD: move to mod-forms? Change default value?
+label {
+	color: @secondary;
+}
+
+
+
+// TODO: normalize a bit, check out what's up with those pixel-based items
+
+// NOTE: utilities.less already gives .disabled elements the .disabled() mixin styles.
+.radio [disabled],
+.checkbox [disabled],
+.textfield [disabled]{
+	.disabled();
+	& + * {
+		.disabled();
+	}
+}
+.select [disabled],
+[type=button][disabled],
+[type=submit][disabled],
+button[disabled]{
+	.disabled();
+}
+
+
+// TODO: make this output a little less verbose, since you'll never have .textfield .select-label, for example.
+.textfield,
+.select {
+	background-color: @white;
+	display: block;
+	margin-bottom: @vr;
+	position: relative;
+
+	&-label {
+		font-size: @font-size-sm;
+		position: absolute;
+		line-height: 1;
+		padding: @vr/8 @grid/2;
+		border: 1px solid transparent; // border makes the padding align with the input
+		top: 0;
+	}
+	input,
+	textarea,
+	select {
+		.border-radius( @border-radius );
+		background-color: transparent;
+		border: 1px solid @dgray;
+		box-sizing: border-box;
+		padding: (@vr * 3 / 4) (@grid / 2) (@vr / 4);
+		position: relative;
+		width: 100%;
+	}
+	& *:focus {
+		border-color: @primary;
+		box-shadow: 0 1px 2px 0 @vlgray inset;
+		outline: none;
+	}
+}
+.select {
+	select {
+		height: 2*@vr; // trying to force it to obey, because it gets a pixel or two off otherwise.
+	}
+	option {
+		font-size: @font-size;
+		padding: 0 @grid/2;
+	}
+	&:after{
+		content: '';
+		border-left: .6rem solid transparent; // TODO: @vr and @grid.
+		border-right:.6rem solid transparent; // TODO: @vr and @grid.
+		border-top: .6rem solid @dgray; // TODO: @vr and @grid.
+		height: 0;
+		margin-top: -.5rem; // TODO: @vr and @grid.
+		position: absolute;
+		right: 1rem; // TODO: @vr and @grid.
+		bottom: 1.3rem; // TODO: @vr and @grid.
+		width: 0;
+	}
+}
+
+.select select{
+	z-index: @z-1;
+}
+
+.select option[disabled]{
+	background-color: @vlgray;
+	color: @dgray;
+}
+
+.textfield {
+	margin-top: -2px; // Because of reasons? Not sure what's up with this.
+}
+
+.radio,
+.checkbox{
+	cursor: pointer;
+	display: inline-block;
+	margin-bottom: @vr;
+	padding: 0 1rem 0 2.25rem; // TODO: @vr and @grid.
+	position: relative;
+	&:before{
+		background-color: #fff;
+		border: 2px solid @dgray; // TODO: @vr and @grid?
+		content: '';
+		height: 16px; // TODO: @vr and @grid?
+		left: 0;
+		margin-top: -10px; // TODO: @vr and @grid? Because of reasons?
+		position: absolute;
+		top: 50%;
+		width: 16px; // TODO: @vr and @grid.
+	}
+}
+
+.checkbox input[type=checkbox],
+.radio input[type=radio]{
+	opacity: 0;
+	position: absolute;
+	z-index: @z-0;
+}
+
+.radio-label,
+.checkbox-label{
+	color: @dgray;
+	font-size: @font-size-sm;
+	line-height: 1;
+}
+
+.radio-label:after,
+.checkbox-label:after{
+	border: 1px solid transparent;
+	content: '';
+	height: 18px; // TODO: @vr and @grid.
+	left: 0;
+	margin-top: -10px; // TODO: @vr and @grid.
+	position: absolute;
+	top: 50%;
+	width: 18px; // TODO: @vr and @grid.
+}
+
+.radio input[type=radio]:focus + .radio-label:after,
+.checkbox input[type=checkbox]:focus + .checkbox-label:after {
+	border-color: @primary;
+	box-shadow: 0 1px 2px 1px @vlgray inset;
+}
+
+.radio {
+	&:before,
+	.radio-label:after{
+		border-radius: @vr; // arbitrarily big to make it round
+	}
+	input[type=radio]:checked + .radio-label:before{
+		content: '';
+		position: absolute;
+		height: 1rem; // TODO: @vr and @grid.
+		width: 1rem; // TODO: @vr and @grid.
+		left: 0.5rem; // TODO: @vr and @grid.
+		margin-top: -0.5rem; // TODO: @vr and @grid.
+		top: 50%;
+		background-color: @primary;
+		border-radius: @vr; // arbitrarily big to make it round
+		@media screen and ( min-width: @screen-md ) {
+			left: 0.32rem; // TODO: @vr and @grid.
+		}
+	}
+}
+
+.checkbox {
+	&:before,
+	.checkbox-label:after{
+		.border-radius( @border-radius );
+	}
+	input[type=checkbox]:checked + .checkbox-label:after {
+		color: @primary;
+		content: '\2713';
+		font-size: @font-size-lg;
+		line-height: 1.5rem;
+		text-align: center;
+	}
+}

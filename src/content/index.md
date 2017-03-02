@@ -1,17 +1,11 @@
-title: Home page
-pageClass: front
+title: Portfolio
+pageClass: front portfolio
+isPortfolio: true
 -----------------
 
-## This is markdown
+Paragraph has to come first
 
-It's being template-ified.
-
------------------
-
-## This is  a second section
-
-::: class: bg
-
-This is an additional div added by the Markdown classRenderer
-
-:::
+- [Northeastern University College of Computer & Information Science](/ccis)
+- [Gordon Brothers](/gordon)
+- [J.E.M. home furnishings](/jem)
+- [Skinner Auctioneers](/skinner)
