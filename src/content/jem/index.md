@@ -1,6 +1,8 @@
 title: JEM home furnishings
 category: business
-link: https://www.behance.net/gallery/14309077/WEBSITE-for-JEM-INTERIOR-DESIGN
+links:
+ - Sample link: https://www.behance.net/gallery/14309077/WEBSITE-for-JEM-INTERIOR-DESIGN
+color: 145A75
 -----------------
 
 Though sadly no longer available, J.E.M. was a small home furnishing and interior decorating firm in Boston's South End.

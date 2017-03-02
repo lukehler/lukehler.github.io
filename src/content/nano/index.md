@@ -1,7 +1,9 @@
 title: MIT.nano
 category: academic
-link: https://mitnano.mit.edu
+links:
+ - Main site: https://mitnano.mit.edu
 image: nano-home.jpg
+color: 609eab
 -----------------
 
 _created at Sametz Blackstone Associates_

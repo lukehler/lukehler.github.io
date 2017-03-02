@@ -1,7 +1,9 @@
 title: Skinner Auctioneers
 category: business
-link: https://www.skinner.com/
+links:
+ - Main site: https://www.skinner.com/
 image: skinner-home.png
+color: c62031
 -----------------
 
 _created at Sametz Blackstone Associates_

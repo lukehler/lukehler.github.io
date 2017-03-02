@@ -1,8 +1,8 @@
 title: Northeastern University College of Computer and Information Science
 category: education
 links:
- Main Site: https://www.ccs.northeastern.edu/
- Robotics@NEU: https://robotics.ccs.northeastern.edu
+ - Main Site: https://www.ccs.northeastern.edu/
+ - Robotics@NEU: https://robotics.ccs.northeastern.edu
 color: e11a2c
 -----------------
 

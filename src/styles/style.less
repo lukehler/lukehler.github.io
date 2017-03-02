@@ -74,12 +74,12 @@ main {
 // Set up the site header and footer
 #site-header,
 #site-footer {
+	padding: 0 @vr/2;
 	background-color: @dgray;
 	color: @white;
 	a {
 		color: inherit;
 	}
-	padding: 0 @vr/2 @vr/2;
 }
 #site-identifier {
 	font-size: 2.4rem;
@@ -90,12 +90,16 @@ main {
 }
 #site-footer {
 	font-size: @font-size-sm;
-	padding-top: @vr/2;
+	padding: @vr/2;
+	p {
+		padding-bottom: 0;
+	}
 }
 
 // make the header-inner a grid row to position the nav elements
 .header-inner {
 	.grid-row( false ); // from mixins-grid, no need for inner wrappers, here
+	padding-bottom: @vr/2;
 	h1,
 	nav {
 		.grid-item( 1 ); // from mixins-grid - note that it's 1/2 because @grid-count
@@ -162,6 +166,7 @@ nav {
 }
 // Main portfolio page
 .portfolio {
+	// Whenever the screen is wide enough, make us a grid.
 	@media screen and ( min-width: @screen-sm ) {
 		#main-content {
 			display: flex;
@@ -171,48 +176,49 @@ nav {
 		}
 	}
 	.project {
-		position: relative;
+		height: 24rem;
+		width: 100%;
+		border: 0;
 		flex: 1 1 auto;
+
 		display: flex;
-		align-items: flex-end;
-		opacity: 0.9;
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+
 		background-color: @primary;
 		background-size: cover;
 		background-position: top center;
 		color: @primary-over;
-		transition-duration: @fast;
-		transition-property: opacity, background-color;
-		border-bottom: 1px solid @white;
-		height: 24rem;
-		width: 100%;
-		&:first-child {
-			border-top: 1px solid @white;
-		}
+
 		@media ( min-width: @screen-sm ) {
 			width: 36rem;
 			max-width: 60rem;
-			border: 1px solid @white;
 		}
 		h2 {
-			flex: 0 0 100%;
-			margin-top: @vr * 2;
+			flex: 0 0 auto;
+			width: 100%;
 			padding: @vr/2 @grid;
+			text-align: center;
+			opacity: 0;
+			transition-duration: @fast;
+			transition-property: padding-bottom, opacity;
 			font-family: @sans;
 			font-size: @font-size;
 			line-height: @line-height;
-			background-color: fade( @text-color, 75% );
-			transition-duration: @fast;
-			transition-property: padding-bottom;
 		}
 		&:hover {
+			background-image: none !important; // important to override inline styles, applied during templating.
 			opacity: 1;
 			h2 {
 				padding-bottom: @vr * 3/2;
+				opacity: 1;
 			}
 		}
 	}
 }
 
+// Quick and simple dropdown for the contact information, based upon hash.
 #contact {
 	background-color: @secondary;
 	color: @secondary-over;
@@ -243,6 +249,7 @@ nav {
 	}
 }
 
+// Originally, this was going to be just for @media print, but ended up leaving it visible all the time.
 #print-contact {
 	float: right;
 	padding-top: @vr/2;
@@ -254,6 +261,7 @@ nav {
 	}
 }
 
+// Setting up the nice print styles, primarily for the c.v.
 @media print {
 	html {
 		font-size: @rem-size * 3/4;

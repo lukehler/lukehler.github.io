@@ -1,6 +1,8 @@
 title: Gordon Brothers
 category: business
-link: https://www.gordonbrothers.com/
+links:
+ - Main site: http://www.gordonbrothers.com/
+ - GBFC: http://www.gbfinco.com
 color: 003855
 -----------------
 
