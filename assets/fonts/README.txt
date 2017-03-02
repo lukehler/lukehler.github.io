@@ -1,1 +1,0 @@
-There are no fonts here, currently, but you can arrange assets subdirectories in whatever way is clearest.

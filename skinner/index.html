@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if (lt IE 9) ]>			<html lang="en" class="no-js oldie">	<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->	<html lang="en" class="no-js">		<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Skinner Auctioneers | lukehler</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/style.min.css" />
+	<script>
+		// Toggle on the .js class if javascript is available
+		var html=document.getElementsByTagName('html').item(0); // There can be only one.
+		html.classList.remove('no-js');
+		html.classList.add('js');
+		// Note that the html variable is available for further javascript as well.
+	</script>	
+</head>
+<body>
+	<a id="top" href="#main-content" class="skip-link">Skip to main content</a>
+	<header id="site-header" role="banner">
+		<div class="header-inner">
+			<h1 id="site-identifier"><a href="/">lukehler</a></h1>
+			<nav role="navigation">
+				<ul>
+					<li><a href="/">portfolio</a>
+					<li><a href="/cv">c.v.</a>
+					<li><a href="#contact">contact</a>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<address role="contentinfo" id="contact">
+		<div class="wrapper">
+			<a href="mailto:luke@witwat.net">luke@witwat.net</a>
+			<a href="tel:6179132299">617.913.2299</a>
+		</div>
+	</address>
+
+	<main id="main-content" role="main">
+		<div class="wrapper">
+
+
+			<h1 id="page-title">Skinner Auctioneers</h1>
+
+
+
+
+
+			<section class="content-section">
+
+<p><em>created at Sametz Blackstone Associates</em></p>
+<p>Skinner Auctioneers has a long history as a local institution and provider of fine art and stuff for rich people. With a fundamental requirement to preserve the functional core of their in-house inventory system and integrate with their external online auction provider, we were tasked with designing an application to build the auction and lot listings by proxy, alongside an existing back end partner.</p>
+
+			</section>
+
+			<section class="content-section">
+
+<h2>The approach</h2>
+<p>From the outset, it was clear that we needed to provide dynamic, related content across the site—namely we always had to show an array of currently available objects from the upcoming auctions and we had to show the expert curators who had gathered and evaluated these objects. The former to directly engage the viewers and the latter to reinforce Skinner's position as a leader in the field.</p>
+<p>With the primary technical concern being interfacing (albeit indirectly and securely) with the central auction platform, the project kicked off identifying the proxy interface. In the end, Solr was used to aggregate lot data while the a SQL server was provisioned to mirror the data for the auctions themselves. The dual interfaces resulted in a highly complex, but ultimately successful combination.</p>
+<p>For page-based content entry that was not directly tied to the auctions themselves, the staff was comfortable with Wordpress but the internal IT team was very reluctant to run a large-scale database-driven instance. As a result, we came up with a flat-file driven CMS, using Wordpress for content entry and to generate dynamic, server-side pages for simple templating and content aggregation. Though a challenging exercise in validation and security, the end result is highly performant even in an environment in which it was cause for concern.</p>
+<p>For mobile viewing, there was a strong preference on the part of the client team for a dedicated mobile site, with mobie viewing being strongly tied to a radically different audience—namely those who were actually at an in-person auction, wandering the floor and searching for additional information. As a result, rather than a fully responsive site, we created a separate <a href="http://m.skinnerinc.com">m.skinnerinc.com</a> mobile site, which tightly focused on driving the viewer directly into the relevant auctions and lots.</p>
+
+			</section>
+
+			<section class="content-section">
+
+<h2>Trivia</h2>
+<p>At one point, on a whim, I created a small script to count the lines of code in our repository. Though the total included both libraries and a great deal of machine-generated code, it was noteworthy that the final number was slightly larger than that of an F-22 Raptor's avionics package, or roughly 117 copies of War and Peace.</p>
+
+			</section>
+
+			<section class="content-section">
+
+<h2>The results</h2>
+<p>More to come, but winner of awards, internal praise, lead to additional followup to accommodate their rapidly-changing programs and interdisciplinary focus. Also lead to a follow-up project to create reusable, extensible, internally coherent microsites for labs and groups using some of the site's styles and features, but stripped down to reflect a simpler, more traditional Wordpress administration experience.</p>
+
+			</section>
+
+
+		</div>
+	</main>
+
+	<footer id="site-footer">
+		<p>&copy; 2017
+	</footer>
+
+	<script src="/script.min.js"></script>
+
+
+	<!-- remove livereload line for delivery! -->
+	<script src="//localhost:2112/livereload.js"></script>
+
+</body>
+</html>
