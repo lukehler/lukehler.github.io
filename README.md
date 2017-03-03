@@ -9,3 +9,5 @@ There are five main tasks that Grunt accomplishes:
 Additionaly, build scripts in `/build/grunt/` are used by `Gruntfile.js` to configure all those tasks. Most notably, `/build/grunt/grunt-template.js` will likely need updates per project to identify the variable names for the various templates.
 
 You can serve up the site compiled by grunt using Express. Running either `node main` or `npm start` will run an express server on port 3000 (by default, using an environmental value for potential Hotel use). The express server serves up files from `/dest/` using `express.static()`.
+
+The subtree syntax and prefix is a little tedious and error-prone to type out every time, so you can `npm run deploy` to `git subtree push --prefix dest origin master`.

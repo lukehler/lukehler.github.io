@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node main",
-    "build": "grunt prod"
+    "build": "grunt prod",
+    "deploy": "git subtree push --prefix dest origin master"
   },
   "dependencies": {
     "express": "^4.14.0"
