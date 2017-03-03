@@ -1,4 +1,4 @@
-title: JEM home furnishings
+title: J.E.M. home furnishings
 category: business
 links:
  - Sample link: https://www.behance.net/gallery/14309077/WEBSITE-for-JEM-INTERIOR-DESIGN

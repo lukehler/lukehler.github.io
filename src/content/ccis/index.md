@@ -4,6 +4,7 @@ links:
  - Main Site: https://www.ccs.northeastern.edu/
  - Robotics@NEU: https://robotics.ccs.northeastern.edu
 color: e11a2c
+image: ccis-phd.jpg
 -----------------
 
 _created at Sametz Blackstone Associates_

@@ -4,6 +4,7 @@ links:
  - Main site: http://www.gordonbrothers.com/
  - GBFC: http://www.gbfinco.com
 color: 003855
+image: gbg-detail.jpg
 -----------------
 
 _created at Sametz Blackstone Associates_

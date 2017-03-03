@@ -59,7 +59,7 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 			}
 			// If we do have a background image, let's use that, overriding the background color, if present.
 			if( project.image ) {
-				image = 'background-image: url(/assets/' + project.image + ');';
+				image = '<img src="/assets/' + project.image + '" sizes="" srcset="" alt="" />';
 			}
 			// Create our markup
 			var templatedProject = template

@@ -4,6 +4,7 @@ links:
  - Main site: https://www.sarahlawrence.edu/
  - Campaign site: https://campaign.sarahlawrence.edu/
 color: 3d6229
+image: slc-stories.jpg
 -----------------
 
 _created at Sametz Blackstone Associates_
