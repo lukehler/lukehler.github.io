@@ -1,7 +1,7 @@
 title: Skinner Auctioneers
 category: business
 links:
- - Main site: https://www.skinner.com/
+ - Main site: http://www.skinner.com/
 image: skinner-home.jpg
 color: c62031
 -----------------

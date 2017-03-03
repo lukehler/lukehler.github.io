@@ -22,8 +22,8 @@
 			<h1 id="site-identifier"><a href="<%= params.paths.url %>"><%= params.siteTitle %></a></h1>
 			<nav role="navigation">
 				<ul>
-					<li><a href="<%= params.paths.url %>">portfolio</a>
-					<li><a href="<%= params.paths.url %>cv">c.v.</a>
+					<li><a href="<%= params.paths.url %>"<% if( page.isPortfolio === true || typeof( page.category ) !== 'undefined' ) { %> class="active"<% } %>>portfolio</a>
+					<li><a href="<%= params.paths.url %>cv"<% if( page.pageClass === 'cv' ) { %> class="active"<% } %>>c.v.</a>
 					<li><a href="#contact">contact</a>
 				</ul>
 			</nav>
@@ -53,6 +53,7 @@
 <% var key = Object.keys(link)[0] %>
 		<a href="<%= link[key] %>" rel="noreferrer noopener"><%= key %></a>
 <% }); %>
+		<p><a href="<%= params.paths.url %>" class="back">Back to portfolio</a>
 	</div>
 <% } %>
 

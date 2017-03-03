@@ -2,7 +2,7 @@ title: Northeastern University College of Computer and Information Science
 category: education
 links:
  - Main Site: https://www.ccs.northeastern.edu/
- - Robotics@NEU: https://robotics.ccs.northeastern.edu
+ - Robotics@NEU: https://www.northeastern.edu/robotics/
 color: e11a2c
 image: ccis-phd.jpg
 -----------------
@@ -31,7 +31,7 @@ We were fortunate that, as one would expect, the client team had some excellent 
 
 ::: class: by-the-numbers
 
-- __7__ different custom content types (in addition to the basic Pages and Posts)
+- __7__ custom content types (in addition to the basic Pages and Posts)
 - __5__ unique "By the Numbers" flyouts
 - __19__ content templates for different types and instances
 - __4__ developers working on independent modularized features

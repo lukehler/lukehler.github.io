@@ -23,9 +23,24 @@ function fetchAJAX(path, callback) {
 	httpRequest.send(); 
 }
 
+// Quick shuffle function to randomize the projects on page load.
+function shuffle( array ) {
+	var counter = array.length;
+	// Tick down through the array... 
+	while ( counter > 0 ) {
+		var index = Math.floor( Math.random() * counter );
+		counter--;
+		// ... And throw the randomly selected element into the current index.
+		var tmp = array[counter];
+		array[counter] = array[index];
+		array[index] = tmp;
+	}
+	return array;
+}
+
 // Quick callback to filter out the non-project entries.
 // Note that this could be more effectively circumvented by preprocessing the project entries differently
-// In this case, I wanted to leave the grunt config simple and show a neat trick in the process.
+// In this case, I wanted to leave the grunt config simple and show a neat template/concat trick in the process.
 function isObject( item ) {
 	return typeof item === 'object';
 }
@@ -71,6 +86,7 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 			templatedProjects.push( templatedProject );
 		});
 		// Now that we have our projects templated, replace the existing list in #main-content with our new, templated list.
+		templatedProjects = shuffle( templatedProjects );
 		document.querySelector('#main-content').innerHTML = templatedProjects.join("\n");
 
 	});

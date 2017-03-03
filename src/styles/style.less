@@ -71,7 +71,6 @@ main {
 	}
 }
 .content-section {
-	clear: both;
 	padding-bottom: @vr * 2;
 	@media screen and ( min-width: @screen-sm ) {
 		& > * {
@@ -151,6 +150,10 @@ nav {
 	}
 	a {
 		.btn( @link, @primary-over, @link-hover ); // from mixins-buttons
+		&.active {
+			background-color: @link-hover;
+			cursor: default;
+		}
 		// overriding some of the default .btn styles
 		display: block;
 		height: auto;
@@ -207,7 +210,9 @@ nav {
 	#page-title {
 		float: left;
 	}
-	
+	.content-section {
+		clear: both;
+	}
 }
 // Originally, this was going to be just for @media print, but ended up leaving it visible all the time.
 #print-contact {
@@ -239,10 +244,37 @@ nav {
 		color: inherit;
 		border-bottom-color: @white;
 		&:hover {
-			border-bottom-color: @primary;
+			border-bottom: 1px solid @white;
+		}
+		&.back {
+			margin-top: @vr/2;
+			margin-bottom: 0;
+			font-size: @font-size-sm;
 		}
 	}
 }
+
+.by-the-numbers {
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: @vr/2;
+	}
+	strong {
+		font-size: @vr * 2;
+		flex-basis: @grid * 6;
+		line-height: 1;
+		display: block;
+		text-align: right;
+		margin-right: @grid;
+		color: @secondary;
+	}
+}
+
 
 // Main portfolio page
 .portfolio {
@@ -273,12 +305,22 @@ nav {
 		background-position: top center;
 		color: @primary-over;
 
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			box-shadow: inset 0 0 1.2rem fade( @dgray, 50% );
+		}
 
 		@media ( min-width: @screen-sm ) {
 			height: 24rem;
 			width: 40rem;
-			max-width: 64rem;
+			max-width: 50%;
 		}
+
 		img {
 			position: absolute;
 			width: 100%;
@@ -287,13 +329,13 @@ nav {
 			transition-duration: @fast;
 			transition-property: opacity;
 			top: 0;
+			opacity: 1;
 		}
 		h2 {
 			flex: 0 0 auto;
 			width: 100%;
 			padding: @vr/2 @grid;
 			text-align: center;
-//			opacity: 0;
 			transition-duration: @fast;
 			transition-property: padding-bottom, opacity;
 			font-family: @sans;
@@ -308,7 +350,10 @@ nav {
 				opacity: 1;
 			}
 			img {
-				opacity: 0;
+				opacity: 0.1;
+			}
+			&:after {
+				box-shadow-color: fade( @dgray, 20% );
 			}
 		}
 	}
