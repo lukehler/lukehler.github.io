@@ -641,7 +641,6 @@ main a:hover {
   border-bottom-color: #d70;
 }
 .content-section {
-  clear: both;
   padding-bottom: 4.8rem;
 }
 @media screen and (min-width: 768px) {
@@ -776,6 +775,10 @@ nav a:active {
 nav a:focus {
   outline: 1px dotted #3a3936;
 }
+nav a.active {
+  background-color: #07a;
+  cursor: default;
+}
 @media screen and (min-width: 768px) {
   nav ul {
     text-align: right;
@@ -821,6 +824,9 @@ nav a:focus {
 .cv #page-title {
   float: left;
 }
+.cv .content-section {
+  clear: both;
+}
 #print-contact {
   float: right;
   padding-top: 1.2rem;
@@ -858,7 +864,33 @@ nav a:focus {
   border-bottom-color: #fff;
 }
 .project-links a:hover {
-  border-bottom-color: #d70;
+  border-bottom: 1px solid #fff;
+}
+.project-links a.back {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+.by-the-numbers ul {
+  list-style: none;
+  margin-left: 0;
+}
+.by-the-numbers li {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 1.2rem;
+}
+.by-the-numbers strong {
+  font-size: 4.8rem;
+  -ms-flex-preferred-size: 7.2rem;
+      flex-basis: 7.2rem;
+  line-height: 1;
+  display: block;
+  text-align: right;
+  margin-right: 1.2rem;
+  color: #07a;
 }
 @media screen and (min-width: 768px) {
   .portfolio #main-content {
@@ -893,21 +925,31 @@ nav a:focus {
   background-position: top center;
   color: #fff;
 }
+.portfolio .project:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 12px rgba(58, 57, 54, .5);
+  box-shadow: inset 0 0 1.2rem rgba(58, 57, 54, .5);
+}
 @media (min-width: 768px) {
   .portfolio .project {
     height: 24rem;
     width: 40rem;
-    max-width: 64rem;
+    max-width: 50%;
   }
 }
 .portfolio .project img {
   position: absolute;
   width: 100%;
   height: auto;
-  opacity: 1;
   transition-duration: 0.3s;
   transition-property: opacity;
   top: 0;
+  opacity: 1;
 }
 .portfolio .project h2 {
   -ms-flex: 0 0 auto;
@@ -930,7 +972,10 @@ nav a:focus {
   opacity: 1;
 }
 .portfolio .project:hover img {
-  opacity: 0;
+  opacity: 0.1;
+}
+.portfolio .project:hover:after {
+  box-shadow-color: rgba(58, 57, 54, .2);
 }
 @media print {
   html {
