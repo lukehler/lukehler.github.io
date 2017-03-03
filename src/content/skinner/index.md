@@ -27,9 +27,3 @@ For mobile viewing, there was a strong preference on the part of the client team
 ## Trivia
 
 At one point, on a whim, I created a small script to count the lines of code in our repository. Though the total included both libraries and a great deal of machine-generated code, it was noteworthy that the final number was slightly larger than that of an F-22 Raptor's avionics package, or roughly 117 copies of War and Peace.
-
-------------------------
-
-## The results
-
-More to come, but winner of awards, internal praise, lead to additional followup to accommodate their rapidly-changing programs and interdisciplinary focus. Also lead to a follow-up project to create reusable, extensible, internally coherent microsites for labs and groups using some of the site's styles and features, but stripped down to reflect a simpler, more traditional Wordpress administration experience.

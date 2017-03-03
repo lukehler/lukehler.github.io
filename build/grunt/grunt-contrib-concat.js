@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 								{
 									title: obj.page.title,
 									category: obj.page.category,
-									path: filepath.replace(/^dest\/(.*)index\.json$/, '$1'),
+									path: filepath.replace(/^tmp\/(.*)index\.json$/, '$1'),
 									image: obj.page.image || null,
 									color: obj.page.color || null,
 									link: obj.page.link || null,
