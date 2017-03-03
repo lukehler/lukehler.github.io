@@ -11,6 +11,14 @@ module.exports = function(grunt) {
 				src: '**',
 				dest: paths.dest + '/assets/',
 			},
+			readme: {
+				expand: true,
+				src: [
+					'README.md',
+					'LICENSE',
+				],
+				dest: paths.dest,
+			}
 		}
 	);
 	grunt.loadNpmTasks('grunt-contrib-copy');
