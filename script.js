@@ -62,8 +62,6 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 		var templatedProjects = [];
 		// For each project, use the project values in the template to replace mustache-style strings, if present
 		projects.forEach( function( project ) {
-			// Rather than the path to the json file, we need the corresponding html document.
-			var path = project.path.replace(/^tmp/, '').replace(/\.json$/, '.html');
 			// Let's plan on having no background at all.
 			// The project items have styles set up for fallbacks, making color and image completely optional.
 			var color = '';
@@ -82,7 +80,7 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 				.replace( '{{ category }}', project.category )
 				.replace( '{{ color }}', color )
 				.replace( '{{ image }}', image )
-				.replace( '{{ path }}', path );
+				.replace( '{{ path }}', project.path );
 
 			// Once we've applied the template, add it to the array.
 			templatedProjects.push( templatedProject );
