@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 		'html',
 		[
 //			'template',
-			'custommarkdown',
+			'slice_front',
 			'copy', // copying assets as a part of this step, too. Could be made a separate step of prod task
 			'concat:json',
 			'clean:tmp',
