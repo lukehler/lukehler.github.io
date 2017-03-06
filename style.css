@@ -827,13 +827,14 @@ nav a.active {
 .cv .content-section {
   clear: both;
 }
-#print-contact {
+#cv-contact {
   float: right;
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
   text-align: right;
 }
-#print-contact a {
+#cv-contact a,
+#cv-contact:after {
   display: block;
   border-bottom: 0;
 }
@@ -992,6 +993,12 @@ nav a.active {
   #site-footer {
     display: none;
   }
+  #cv-contact:after {
+    content: "617.913.2299";
+  }
+  #cv-contact .pdf {
+    display: none;
+  }
   #main-content a {
     border-bottom: 0;
   }
@@ -1007,7 +1014,7 @@ nav a.active {
     break-before: always;
     page-break-before: always;
   }
-  #page-title + .content-section > h2,
+  .content-section.first > h2,
   .content-section:last-child > h2 {
     break-before: avoid;
     page-break-before: avoid;
