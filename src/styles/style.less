@@ -215,12 +215,13 @@ nav {
 	}
 }
 // Originally, this was going to be just for @media print, but ended up leaving it visible all the time.
-#print-contact {
+#cv-contact {
 	float: right;
 	padding-top: @vr/2;
 	padding-bottom: @vr/2;
 	text-align: right;
-	a {
+	a,
+	&:after {
 		display: block;
 		border-bottom: 0;
 	}
@@ -375,6 +376,14 @@ nav {
 	#site-footer {
 		display: none;
 	}
+	#cv-contact {
+		&:after {
+			content: "617.913.2299";
+		}
+		.pdf {
+			display: none;
+		}
+	}
 	#main-content {
 		a {
 			border-bottom: 0;
@@ -392,7 +401,7 @@ nav {
 		break-before: always;
 		page-break-before: always;
 	}
-	#page-title + .content-section,
+	.content-section.first,
 	.content-section:last-child {
 		& > h2 {
 			break-before: avoid;
