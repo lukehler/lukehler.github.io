@@ -660,6 +660,9 @@ main a:hover {
     -moz-column-gap: 2.4rem;
          column-gap: 2.4rem;
   }
+  .content-section > ul a {
+    display: inline-block;
+  }
 }
 #site-header,
 #site-footer {
@@ -842,19 +845,23 @@ nav a.active {
   background-color: #07a;
   color: #fff;
   padding: 1.2rem 1.2rem;
-  float: right;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  -ms-flex-align: end;
-      align-items: flex-end;
-  width: 19.2rem;
-  margin-left: 2.4rem;
   margin-bottom: 2.4rem;
 }
 .project-links > :last-child {
   padding-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .project-links {
+    -ms-flex-align: end;
+        align-items: flex-end;
+    width: 19.2rem;
+    float: right;
+    margin-left: 2.4rem;
+  }
 }
 .project-links a {
   -ms-flex: 1 0 auto;
@@ -871,6 +878,10 @@ nav a.active {
   margin-top: 2.4rem;
   margin-bottom: 0;
   font-size: 1.2rem;
+}
+.featured-image {
+  border: 1px solid #c8c8c8;
+  margin-bottom: 2.4rem;
 }
 .by-the-numbers ul {
   list-style: none;
@@ -922,8 +933,6 @@ nav a.active {
   -ms-flex-align: stretch;
       align-items: stretch;
   background-color: #d70;
-  background-size: cover;
-  background-position: top center;
   color: #fff;
 }
 .portfolio .project:after {
@@ -947,10 +956,12 @@ nav a.active {
   position: absolute;
   width: 100%;
   height: auto;
-  transition-duration: 0.3s;
-  transition-property: opacity;
+  min-width: 100%;
+  min-height: 100%;
   top: 0;
   opacity: 1;
+  transition-duration: 0.3s;
+  transition-property: opacity;
 }
 .portfolio .project h2 {
   -ms-flex: 0 0 auto;
@@ -977,6 +988,27 @@ nav a.active {
 }
 .portfolio .project:hover:after {
   box-shadow-color: rgba(58, 57, 54, .2);
+}
+.portfolio .content-section {
+  padding-top: 2.4rem;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+}
+.portfolio .content-section > * {
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+@media screen and (min-width: 960px) {
+  .portfolio .content-section ul {
+    -moz-column-count: 3;
+         column-count: 3;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .portfolio .content-section ul {
+    -moz-column-count: 4;
+         column-count: 4;
+  }
 }
 @media print {
   html {
