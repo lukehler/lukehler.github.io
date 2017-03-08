@@ -84,6 +84,9 @@ main {
 		@media ( min-width: @screen-sm ) {
 			column-count: 2;
 			column-gap: @grid*2;
+			a {
+				display: inline-block; // keeps links from breaking over columns.
+			}
 		}
 	}
 }
@@ -231,13 +234,15 @@ nav {
 // Portfolio detail page links
 .project-links {
 	.bg-secondary();
-	float: right;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	width: @grid * 16;
-	margin-left: @grid * 2;
 	margin-bottom: @vr;
+	@media screen and ( min-width: @screen-sm-min ) {
+		align-items: flex-end;
+		width: @grid * 16;
+		float: right;
+		margin-left: @grid * 2;
+	}
 	a {
 		flex: 1 0 auto;
 		font-size: @font-size-lg;
@@ -253,6 +258,10 @@ nav {
 			font-size: @font-size-sm;
 		}
 	}
+}
+.featured-image {
+	border: 1px solid @lgray;
+	margin-bottom: @vr;
 }
 
 .by-the-numbers {
@@ -302,8 +311,6 @@ nav {
 		align-items: stretch;
 
 		background-color: @primary;
-		background-size: cover;
-		background-position: top center;
 		color: @primary-over;
 
 		&:after {
@@ -326,11 +333,13 @@ nav {
 			position: absolute;
 			width: 100%;
 			height: auto;
+			min-width: 100%;
+			min-height: 100%;
+			top: 0;
+
 			opacity: 1;
 			transition-duration: @fast;
 			transition-property: opacity;
-			top: 0;
-			opacity: 1;
 		}
 		h2 {
 			flex: 0 0 auto;
@@ -355,6 +364,23 @@ nav {
 			}
 			&:after {
 				box-shadow-color: fade( @dgray, 20% );
+			}
+		}
+	}
+	// Any .content-sections appended are additional links
+	.content-section {
+		padding-top: @vr;
+		flex: 1 1 100%;
+		& > * {
+			margin-left: @grid;
+			margin-right: @grid;
+		}
+		ul {
+			@media screen and ( min-width: @screen-md ) {
+				column-count: 3;
+			}
+			@media screen and ( min-width: @screen-lg ) {
+				column-count: 4;
 			}
 		}
 	}

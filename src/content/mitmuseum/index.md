@@ -3,12 +3,11 @@ category: cultural
 links:
  - The Site: http://mitmuseum.mit.edu/
 color: f0037f
-image: mitmuseum-exhibits.jpg
 -----------------
 
-_created at Sametz Blackstone Associates_
-
 The MIT Museum engages the wider community with MIT’s science, technology, and other areas of scholarship in ways that will best serve the nation and the world in the 21st century. As the world's window into the work being done every day at MIT, the engagement caused a lot of excitement and provided a chance to put MIT's Drupal Cloud offering through its paces.
+
+_created at Sametz Blackstone Associates_
 
 -----------------
 

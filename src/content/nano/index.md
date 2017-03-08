@@ -1,14 +1,13 @@
 title: MIT.nano
 category: academic
 links:
- - Main site: https://mitnano.mit.edu
-image: nano-home.jpg
+ - The Site: https://mitnano.mit.edu
 color: 609eab
 -----------------
 
-_created at Sametz Blackstone Associates_
-
 MIT.nano is the collective name for MIT's cross-disciplinary nanotechnology and nanoscience fabrication laboratory, which is currently under construction right in the heart of campus. In addition to being one of the highest priorities for President L. Rafael Reif and the Deans of the Schools of Science and Engineering, the construction project is also a massive disruption to the flow of traffic through campus and the site had to serve as the source for logistical news amongst the community, as well as a broader outreach and advocacy role.
+
+_created at Sametz Blackstone Associates_
 
 ------------------
 

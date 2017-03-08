@@ -4,12 +4,11 @@ links:
  - Main site: http://www.gordonbrothers.com/
  - GBFC: http://www.gbfinco.com
 color: 003855
-image: gbg-detail.jpg
 -----------------
 
-_created at Sametz Blackstone Associates_
-
 Gordon Brothers is a global financial services firm that specializes in valuations, dispositions, operations, and investments. With a reinvigorated brand strategy underway, the launch of the website was to serve as the centerpiece of a massive, global rollout.
+
+_created at Sametz Blackstone Associates_
 
 -----------------
 

@@ -51,15 +51,26 @@ function isObject( item ) {
 if( document.querySelector('body').classList.contains('portfolio') ) {
 	// heads up.
 	console.log('Portfolio page, fetching index');
+	// Since we're doing XHR requests in vanilla js, might as well do the templating, too.
+	// Go fetch the template for an individual project, as a string.
+	var template = document.querySelector('#project-template').textContent;
+	// set up a destination for our projects
+	var templatedProjects = [];
+	// Set up our offsite Links
+	var offsiteLinks = '';
+	// Leave the first .content-section to be replaced, but grab any others as plain old text.
+	document.querySelectorAll('.content-section').forEach( function(item, index){
+		if( index > 0 ) {
+console.log( item );
+			offsiteLinks += item.outerHTML;
+		}
+	});
+
+
 	fetchAJAX('/projects.json', function(data){
 		// Get our list of valid project pages
 		var projects = JSON.parse(data).filter(isObject);
 
-		// Since we're doing XHR requests in vanilla js, might as well do the templating, too.
-		// Go fetch the template for an individual project, as a string.
-		var template = document.querySelector('#project-template').textContent;
-		// set up a destination for our projects
-		var templatedProjects = [];
 		// For each project, use the project values in the template to replace mustache-style strings, if present
 		projects.forEach( function( project ) {
 			// Let's plan on having no background at all.
@@ -70,9 +81,10 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 			if( project.color ) {
 				color = 'background-color: #' + project.color + ';';
 			}
-			// If we do have a background image, let's use that, overriding the background color, if present.
+			// If we do have a background image, let's use that, sitting over the background color, if present.
+			// For now, skipping all the images, as I happen to really like the straightforward colors-only approach.
 			if( project.image ) {
-				image = '<img src="/assets/' + project.image + '" sizes="" srcset="" alt="" />';
+//				image = '<img src="/assets/' + project.image + '" srcset="/assets/lg/' + project.image + ' 800w" alt="" />';
 			}
 			// Create our markup
 			var templatedProject = template
@@ -87,6 +99,9 @@ if( document.querySelector('body').classList.contains('portfolio') ) {
 		});
 		// Now that we have our projects templated, replace the existing list in #main-content with our new, templated list.
 		templatedProjects = shuffle( templatedProjects );
+		// Re-append our offsite links to the shuffled array
+		templatedProjects.push(offsiteLinks);
+		// And append it all to the DOM.
 		document.querySelector('#main-content').innerHTML = templatedProjects.join("\n");
 
 	});

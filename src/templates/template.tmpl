@@ -73,7 +73,6 @@
 		<p>&copy; <%= new Date().getFullYear() %>
 	</footer>
 
-	<script src="<%= params.paths.url %>script.min.js"></script>
 <% if( page.isPortfolio === true ) { %>
 	<script id="project-template" type="template">
 
@@ -84,6 +83,8 @@
 
 	</script>
 <% } %>
+
+	<script src="<%= params.paths.url %>script.js"></script>
 
 	<!-- remove livereload line for delivery!
 	<script src="//localhost:2112/livereload.js"></script> -->

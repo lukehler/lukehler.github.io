@@ -4,12 +4,13 @@ links:
  - Main Site: https://www.ccs.northeastern.edu/
  - Robotics@NEU: https://www.northeastern.edu/robotics/
 color: e11a2c
-image: ccis-phd.jpg
 -----------------
 
-_created at Sametz Blackstone Associates_
+<img class="featured-image" src="/assets/ccis-phd.jpg" srcset="/assets/lg/ccis-phd.jpg 1024w" alt="" />
 
-The Northeastern College of Computer and Information Science is expanding and changing rapidly. With a heavy focus on cross-disciplinary programs, an innovative and effective cooperative outreach program, and a pragmatic focus on industry involvement, the college needed to address a number of audiences and accommodate the recent University-wide rebranding effort, but plan for future enhancement and growth as well.
+The Northeastern College of Computer and Information Science is expanding and changing rapidly. With a heavy focus on cross-disciplinary programs, an innovative and effective cooperative outreach program, and a pragmatic focus on industry involvement, the college needed to address a number of audiences, accommodate the recent University-wide rebranding effort, and plan for future enhancement and growth as well.
+
+_created at Sametz Blackstone Associates_
 
 ------------------
 
@@ -34,6 +35,6 @@ We were fortunate that, as one would expect, the client team had some excellent 
 - __7__ custom content types (in addition to the basic Pages and Posts)
 - __5__ unique "By the Numbers" flyouts
 - __19__ content templates for different types and instances
-- __4__ developers working on independent modularized features
+- __4__ developers on the team, working independently on modularized features
 
 :::

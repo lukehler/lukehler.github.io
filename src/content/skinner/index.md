@@ -1,14 +1,13 @@
 title: Skinner Auctioneers
 category: business
 links:
- - Main site: http://www.skinner.com/
-image: skinner-home.jpg
+ - The site: http://www.skinner.com/
 color: c62031
 -----------------
 
-_created at Sametz Blackstone Associates_
-
 Skinner Auctioneers has a long history as a local institution and provider of fine art and stuff for rich people. With a fundamental requirement to preserve the functional core of their in-house inventory system and integrate with their external online auction provider, we were tasked with designing an application to build the auction and lot listings by proxy, alongside an existing back end partner.
+
+_created at Sametz Blackstone Associates_
 
 ------------------
 
