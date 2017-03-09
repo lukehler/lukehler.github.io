@@ -616,54 +616,6 @@ html {
     margin-bottom: 2.4rem;
   }
 }
-a {
-  transition-property: background, color, border-color;
-  transition-duration: 0.3s;
-}
-h3 {
-  padding-top: calc(0.8rem - 1px);
-  border-top: 1px solid #c8c8c8;
-  margin-top: 1.2rem;
-}
-h4 {
-  padding-top: 0;
-}
-h4 span {
-  display: block;
-  float: right;
-}
-main a {
-  text-decoration: none;
-  border-bottom: 1px dashed #07a;
-}
-main a:hover {
-  text-decoration: none;
-  border-bottom-color: #d70;
-}
-.content-section {
-  padding-bottom: 4.8rem;
-}
-@media screen and (min-width: 768px) {
-  .content-section > * {
-    max-width: 70rem;
-  }
-}
-.content-section > ul {
-  max-width: 100%;
-  margin-left: 0;
-  list-style: none;
-}
-@media (min-width: 768px) {
-  .content-section > ul {
-    -moz-column-count: 2;
-         column-count: 2;
-    -moz-column-gap: 2.4rem;
-         column-gap: 2.4rem;
-  }
-  .content-section > ul a {
-    display: inline-block;
-  }
-}
 #site-header,
 #site-footer {
   padding: 0 1.2rem;
@@ -675,6 +627,13 @@ main a:hover {
 #site-footer a {
   color: inherit;
 }
+#site-footer {
+  font-size: 1.2rem;
+  padding: 1.2rem;
+}
+#site-footer p {
+  padding-bottom: 0;
+}
 #site-identifier {
   font-size: 2.4rem;
   padding-bottom: 0;
@@ -684,13 +643,6 @@ main a:hover {
   #site-identifier {
     font-size: 3.6rem;
   }
-}
-#site-footer {
-  font-size: 1.2rem;
-  padding: 1.2rem;
-}
-#site-footer p {
-  padding-bottom: 0;
 }
 .header-inner {
   display: -ms-flexbox;
@@ -824,11 +776,59 @@ nav a.active {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
 }
+a {
+  transition-property: background, color, border-color;
+  transition-duration: 0.3s;
+}
+h3 {
+  padding-top: calc(0.8rem - 1px);
+  border-top: 1px solid #c8c8c8;
+  margin-top: 1.2rem;
+}
+h4 {
+  padding-top: 0;
+}
+h4 span {
+  display: block;
+  float: right;
+}
+main a {
+  text-decoration: none;
+  border-bottom: 1px dashed #07a;
+}
+main a:hover {
+  text-decoration: none;
+  border-bottom-color: #d70;
+}
+.content-section {
+  padding-bottom: 4.8rem;
+}
+@media screen and (min-width: 768px) {
+  .content-section > * {
+    max-width: 70rem;
+  }
+}
+.content-section > ul {
+  max-width: 100%;
+  margin-left: 0;
+  list-style: none;
+}
+@media (min-width: 768px) {
+  .content-section > ul {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 2.4rem;
+         column-gap: 2.4rem;
+  }
+  .content-section > ul a {
+    display: inline-block;
+  }
+}
 .cv #page-title {
   float: left;
 }
-.cv .content-section {
-  clear: both;
+.cv .content-section.first > :first-child {
+  clear: left;
 }
 #cv-contact {
   float: right;
@@ -837,9 +837,20 @@ nav a.active {
   text-align: right;
 }
 #cv-contact a,
+#cv-contact button,
 #cv-contact:after {
   display: block;
   border-bottom: 0;
+}
+#cv-contact button {
+  width: 100%;
+  text-align: right;
+  background: none;
+  color: #d70;
+  cursor: pointer;
+}
+#cv-contact button:hover {
+  color: #07a;
 }
 .project-links {
   background-color: #07a;
@@ -895,6 +906,7 @@ nav a.active {
   margin-bottom: 1.2rem;
 }
 .by-the-numbers strong {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 4.8rem;
   -ms-flex-preferred-size: 7.2rem;
       flex-basis: 7.2rem;
@@ -934,16 +946,9 @@ nav a.active {
       align-items: stretch;
   background-color: #d70;
   color: #fff;
-}
-.portfolio .project:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: inset 0 0 12px rgba(58, 57, 54, .5);
-  box-shadow: inset 0 0 1.2rem rgba(58, 57, 54, .5);
+  opacity: 0.9;
+  transition-duration: 0.3s;
+  transition-property: opacity;
 }
 @media (min-width: 768px) {
   .portfolio .project {
@@ -951,17 +956,6 @@ nav a.active {
     width: 40rem;
     max-width: 50%;
   }
-}
-.portfolio .project img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  top: 0;
-  opacity: 1;
-  transition-duration: 0.3s;
-  transition-property: opacity;
 }
 .portfolio .project h2 {
   -ms-flex: 0 0 auto;
@@ -974,6 +968,27 @@ nav a.active {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 2.4rem;
   line-height: 3.6rem;
+}
+.portfolio .project:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 12px rgba(58, 57, 54, .5);
+  box-shadow: inset 0 0 1.2rem rgba(58, 57, 54, .5);
+}
+.portfolio .project img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  opacity: 1;
+  transition-duration: 0.3s;
+  transition-property: opacity;
 }
 .portfolio .project:hover {
   background-image: none !important;
