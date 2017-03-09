@@ -1,8 +1,5 @@
 /* --- lukehler v0.1.0 --- */
 
-/*
- *	Core lootstrap
- */
 /*	********************************
  *	LOOTSTRAP ELEMENTS
  *	********************************
@@ -588,6 +585,10 @@ hr:before {
   clear: both;
   display: table;
 }
+/*	********************************
+ *	MAIN LAYOUT
+ *	********************************
+ */
 #top {
   color: transparent;
   position: absolute;
@@ -676,6 +677,10 @@ html {
   -ms-flex-preferred-size: 66.66666667%;
       flex-basis: 66.66666667%;
 }
+/*	********************************
+ *	SITE NAVIGATION
+ *	********************************
+ */
 nav ul {
   list-style: none;
   padding-bottom: 0;
@@ -776,6 +781,10 @@ nav a.active {
   padding-top: 1.2rem;
   padding-bottom: 1.2rem;
 }
+/*	********************************
+ *	BASIC TYPE STYLES
+ *	********************************
+ */
 a {
   transition-property: background, color, border-color;
   transition-duration: 0.3s;
@@ -824,6 +833,10 @@ main a:hover {
     display: inline-block;
   }
 }
+/*	********************************
+ *	C.V. STYLES
+ *	********************************
+ */
 .cv #page-title {
   float: left;
 }
@@ -852,6 +865,10 @@ main a:hover {
 #cv-contact button:hover {
   color: #07a;
 }
+/*	********************************
+ *	PORTFOLIO DETAIL VIEW
+ *	********************************
+ */
 .project-links {
   background-color: #07a;
   color: #fff;
@@ -916,6 +933,10 @@ main a:hover {
   margin-right: 1.2rem;
   color: #07a;
 }
+/*	********************************
+ *	PORTFOLIO INDEX VIEW
+ *	********************************
+ */
 @media screen and (min-width: 768px) {
   .portfolio #main-content {
     display: -ms-flexbox;
@@ -1025,6 +1046,10 @@ main a:hover {
          column-count: 4;
   }
 }
+/*	********************************
+ *	PRINT STYLES
+ *	********************************
+ */
 @media print {
   html {
     font-size: 46.875%;
