@@ -1,5 +1,10 @@
-// Some really basic nav styles
+/*	********************************
+ *	SITE NAVIGATION
+ *	********************************
+ */
+
 nav {
+
 	ul {
 		// resetting core-elements ul styles
 		list-style: none;
@@ -9,12 +14,14 @@ nav {
 		margin-left: -@vr/2;
 		margin-right: -@vr/2;
 	}
+
 	li {
 		display: block;
 		// align nicely with the site title
 		margin-top: @vr/2;
 		flex: 1 1 auto;
 	}
+
 	a {
 		.btn( @link, @primary-over, @link-hover ); // from mixins-buttons
 		&.active {
@@ -27,6 +34,7 @@ nav {
 		margin-left: @vr/2;
 		margin-right: @vr/2;
 	}
+
 	// And since the header gets wider at desktop, might as well tidy up the nav.
 	@media screen and ( min-width: @screen-sm ) {
 		ul {
@@ -50,10 +58,12 @@ nav {
 	overflow: hidden;
 	transition-duration: @fast;
 	transition-property: max-height, padding;
+
 	.wrapper {
 		display: flex;
 		justify-content: space-between;
 	}
+
 	a {
 		display: block;
 		flex: 0 0 auto;
@@ -64,6 +74,7 @@ nav {
 			border-bottom-color: @secondary-over;
 		}
 	}
+
 	&:target {
 		max-height: @vr*2;
 		padding-top: @vr/2;

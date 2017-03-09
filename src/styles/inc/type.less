@@ -1,16 +1,21 @@
-// Some basic type styles.
+/*	********************************
+ *	BASIC TYPE STYLES
+ *	********************************
+ */
 
 // Add a tiny bit of animation to link hovers. While broad, the property covers all use cases here
 a {
 	transition-property: background, color, border-color;
 	transition-duration: @fast;
 }
+
 // Realign our h3s a touch and add a border.
 h3 {
 	padding-top: calc( @vr/3 ~'-' 1px );
 	border-top: 1px solid @lgray;
 	margin-top: @vr/2;
 }
+
 // Setup for dates of employment, the primary use case of h4s.
 h4 {
 	padding-top: 0;
@@ -19,6 +24,7 @@ h4 {
 		float: right;
 	}
 }
+
 // Content link styles
 main {
 	a {
@@ -30,6 +36,7 @@ main {
 		}
 	}
 }
+
 // Add some spacing and set up the two-column lists to break things up a touch.
 .content-section {
 	padding-bottom: @vr * 2;

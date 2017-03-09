@@ -1,5 +1,11 @@
+/*	********************************
+ *	PRINT STYLES
+ *	********************************
+ */
+
 // Setting up the nice print styles, primarily for the c.v.
 @media print {
+
 	// Print resets
 	html {
 		font-size: @rem-size * 3/4;
@@ -11,6 +17,7 @@
 		color: black !important;
 		border-color: black !important;
 	}
+
 	// No need for these
 	#site-header,
 	#site-footer {
@@ -27,6 +34,7 @@
 			display: none;
 		}
 	}
+
 	// No need to highlight the links, since you can't click on them, and let's space out the lists a bit.
 	#main-content {
 		a {
@@ -36,17 +44,20 @@
 			margin-bottom: @vr/4;
 		}
 	}
+
 	// Resetting some of the page styles
 	#page-title + .content-section {
 		border-top: 1px solid black;
 		margin-top: @vr/2;
 		padding-top: @vr;
 	}
+
 	// Setting up the page breaks.
 	h2 {
 		break-before: always;
 		page-break-before: always;
 	}
+
 	.content-section.first,
 	.content-section:last-child {
 		& > h2 {
