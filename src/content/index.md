@@ -7,7 +7,7 @@ isPortfolio: true
 
 - [Gordon Brothers](/gordon)
 - [J.E.M.](/jem)
-- [Lootstrap](/lootstrap)
+- [Lootstrap](/ls)
 - [MIT.nano](/nano)
 - [MIT Museum](/mitmuseum)
 - [Northeastern University College of Computer & Information Science](/ccis)

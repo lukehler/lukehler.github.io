@@ -1,0 +1,57 @@
+// Setting up the nice print styles, primarily for the c.v.
+@media print {
+	// Print resets
+	html {
+		font-size: @rem-size * 3/4;
+	}
+	*,
+	*:before,
+	*:after {
+		background-color: white !important;
+		color: black !important;
+		border-color: black !important;
+	}
+	// No need for these
+	#site-header,
+	#site-footer {
+		display: none;
+	}
+
+	// Hiding phone number a bit, and appending it only when printed.
+	// Also, not much use in displaying a printer-friendly link while
+	#cv-contact {
+		&:after {
+			content: "617.913.2299";
+		}
+		.pdf {
+			display: none;
+		}
+	}
+	// No need to highlight the links, since you can't click on them, and let's space out the lists a bit.
+	#main-content {
+		a {
+			border-bottom: 0;
+		}
+		h3 + ul > li {
+			margin-bottom: @vr/4;
+		}
+	}
+	// Resetting some of the page styles
+	#page-title + .content-section {
+		border-top: 1px solid black;
+		margin-top: @vr/2;
+		padding-top: @vr;
+	}
+	// Setting up the page breaks.
+	h2 {
+		break-before: always;
+		page-break-before: always;
+	}
+	.content-section.first,
+	.content-section:last-child {
+		& > h2 {
+			break-before: avoid;
+			page-break-before: avoid;
+		}
+	}
+}

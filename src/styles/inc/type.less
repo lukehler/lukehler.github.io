@@ -1,0 +1,54 @@
+// Some basic type styles.
+
+// Add a tiny bit of animation to link hovers. While broad, the property covers all use cases here
+a {
+	transition-property: background, color, border-color;
+	transition-duration: @fast;
+}
+// Realign our h3s a touch and add a border.
+h3 {
+	padding-top: calc( @vr/3 ~'-' 1px );
+	border-top: 1px solid @lgray;
+	margin-top: @vr/2;
+}
+// Setup for dates of employment, the primary use case of h4s.
+h4 {
+	padding-top: 0;
+	span {
+		display: block;
+		float: right;
+	}
+}
+// Content link styles
+main {
+	a {
+		text-decoration: none;
+		border-bottom: 1px dashed @link-hover;
+		&:hover {
+			text-decoration: none;
+			border-bottom-color: @link;
+		}
+	}
+}
+// Add some spacing and set up the two-column lists to break things up a touch.
+.content-section {
+	padding-bottom: @vr * 2;
+	@media screen and ( min-width: @screen-sm ) {
+		& > * {
+			max-width: 70rem;
+		}
+	}
+	& > ul {
+		max-width: 100%;
+		margin-left: 0;
+		list-style: none;
+		@media ( min-width: @screen-sm ) {
+			column-count: 2;
+			column-gap: @grid*2;
+			a {
+				display: inline-block; // keeps links from breaking over columns.
+			}
+		}
+	}
+}
+

@@ -1,0 +1,60 @@
+// Portfolio detail page links
+
+// .project-links just includes links to the live sites and back to the index
+.project-links {
+	.bg-secondary(); // .bg-secondary() sets up white on blue and some spacing.
+
+	display: flex;
+	flex-direction: column;
+	margin-bottom: @vr;
+	// When wide enough, let's float them off to the right.
+	@media screen and ( min-width: @screen-sm-min ) {
+		align-items: flex-end;
+		width: @grid * 16;
+		float: right;
+		margin-left: @grid * 2;
+	}
+	a {
+		flex: 1 0 auto;
+		font-size: @font-size-lg;
+		margin-bottom: @vr/4;
+		color: inherit;
+		border-bottom-color: @white;
+		&:hover {
+			border-bottom: 1px solid @white;
+		}
+		&.back {
+			margin-top: @vr;
+			margin-bottom: 0;
+			font-size: @font-size-sm;
+		}
+	}
+}
+// Some basic styles to set up the featured image
+.featured-image {
+	border: 1px solid @lgray;
+	margin-bottom: @vr;
+}
+
+// Optional .by-the-numbers... so far, just used on CCIS
+.by-the-numbers {
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: @vr/2;
+	}
+	strong {
+		font-family: @serif;
+		font-size: @vr * 2;
+		flex-basis: @grid * 6;
+		line-height: 1;
+		display: block;
+		text-align: right;
+		margin-right: @grid;
+		color: @secondary;
+	}
+}

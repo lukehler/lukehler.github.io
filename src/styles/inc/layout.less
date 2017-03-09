@@ -1,0 +1,69 @@
+// "Skip to main content" also serves as the anchor for "back to top"
+#top {
+	.skip-link();
+}
+
+// For those who show their scroll bars, make sure that space is always carved out for it, so that the center alignment doesn't jump between short and long pages.
+html {
+	overflow-y: scroll;
+}
+
+// Set up a little vertical flex to stick the footer to the bottom.
+@media screen {
+	body {
+		display: flex;
+		flex-direction: column;
+		main {
+			flex-grow: 1;
+			> .wrapper {
+				margin-top: @vr;
+				margin-bottom: @vr;
+			}
+		}
+	}
+}
+
+
+// Set up the site header and footer
+#site-header,
+#site-footer {
+	padding: 0 @vr/2;
+	background-color: @dgray;
+	background-image: linear-gradient( lighten( @dgray, 5% ) 25%, @black 100% );
+	color: @white;
+	a {
+		color: inherit;
+	}
+}
+#site-footer {
+	font-size: @font-size-sm;
+	padding: @vr/2;
+	p {
+		padding-bottom: 0;
+	}
+}
+
+// Add the site title
+#site-identifier {
+	font-size: 2.4rem;
+	padding-bottom: 0;
+	padding-top: 1.2rem;
+	@media screen and ( min-width: @screen-sm ) {
+		font-size: 3.6rem;
+	}
+}
+
+// make the header-inner a grid row to position the nav elements
+.header-inner {
+	.grid-row( false ); // from mixins-grid, no need for inner wrappers, here
+	padding-bottom: @vr/2;
+	h1,
+	nav {
+		.grid-item( 1 ); // from mixins-grid - note that @grid-count is 3, so 1/3
+		margin-bottom: 0;
+	}
+	// For the nav, we only need to override the flex-basis, the rest is covered by .grid-item();
+	nav {
+		flex-basis: 100% * 2 / 3; // letting LESS calculate the significant digits.
+	}
+}

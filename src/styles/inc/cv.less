@@ -1,0 +1,36 @@
+// CV-specific page
+
+// Set up the contact information in the page header.
+.cv {
+	#page-title {
+		float: left;
+	}
+	.content-section.first > :first-child {
+		clear: left;
+	}
+}
+
+// Originally, this was going to be just for @media print, but ended up leaving it visible all the time.
+#cv-contact {
+	float: right;
+	padding-top: @vr/2;
+	padding-bottom: @vr/2;
+	text-align: right;
+	a,
+	button,
+	&:after {
+		display: block;
+		border-bottom: 0;
+	}
+	button {
+		// Small helpers for the button, to make it look like a link.
+		width: 100%;
+		text-align: right;
+		background: none;
+		color: @link;
+		cursor: pointer;
+		&:hover {
+			color: @link-hover;
+		}
+	}
+}
