@@ -1,4 +1,4 @@
-/* --- lukehler v0.1.0 --- */
+/* --- lukehler v1.0.0 --- */
 
 // We don't really need jQuery here, so let's do it all in vanilla javascript. Just for kicks.
 // Note that we already have `html` as an object on the window, used in the head to add/remove the .js/.no-js classes.

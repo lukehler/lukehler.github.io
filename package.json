@@ -1,7 +1,7 @@
 {
   "name": "lukehler",
   "title": "lukehler",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "start": "node main",
@@ -24,6 +24,7 @@
     "grunt-slice-front": "^1.0.3",
     "js-yaml": "^3.7.0",
     "lodash.template": "^4.4.0",
+    "lootstrap": "github:lukehler/lootstrap",
     "markdown-it": "^8.2.2",
     "markdown-it-container": "^2.0.0",
     "postcss-cssnext": "^2.5.1",

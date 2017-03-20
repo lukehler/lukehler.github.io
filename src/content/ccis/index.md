@@ -6,7 +6,9 @@ links:
 color: e11a2c
 -----------------
 
+<!--
 <img class="featured-image" src="/assets/ccis-phd.jpg" srcset="/assets/lg/ccis-phd.jpg 1024w" alt="" />
+-->
 
 The Northeastern College of Computer and Information Science is expanding and changing rapidly. With a heavy focus on cross-disciplinary programs, an innovative and effective cooperative outreach program, and a pragmatic focus on industry involvement, the college needed to address a number of audiences, accommodate the recent University-wide rebranding effort, and plan for future enhancement and growth as well.
 

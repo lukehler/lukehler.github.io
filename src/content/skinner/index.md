@@ -19,7 +19,7 @@ With the primary technical concern being interfacing (albeit indirectly and secu
 
 For page-based content entry that was not directly tied to the auctions themselves, the staff was comfortable with Wordpress but the internal IT team was very reluctant to run a large-scale database-driven instance. As a result, we came up with a flat-file driven CMS, using Wordpress for content entry and to generate dynamic, server-side pages for simple templating and content aggregation. Though a challenging exercise in validation and security, the end result is highly performant even in an environment in which it was cause for concern.
 
-For mobile viewing, there was a strong preference on the part of the client team for a dedicated mobile site, with mobie viewing being strongly tied to a radically different audience—namely those who were actually at an in-person auction, wandering the floor and searching for additional information. As a result, rather than a fully responsive site, we created a separate m.skinnerinc.com mobile site, which tightly focused on driving the viewer directly into the relevant auctions and lots.
+For mobile viewing, there was a strong preference on the part of the client team for a dedicated mobile site, with mobile viewing being strongly tied to a radically different audience—namely those who were actually at an in-person auction, wandering the floor and searching for additional information. As a result, rather than a fully responsive site, we created a separate m.skinnerinc.com mobile site, which tightly focused on driving the viewer directly into the relevant auctions and lots.
 
 ------------------------
 

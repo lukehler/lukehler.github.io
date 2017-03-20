@@ -38,7 +38,6 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'html',
 		[
-//			'template',
 			'slice_front',
 			'copy', // copying assets as a part of this step, too. Could be made a separate step of prod task
 			'concat:json',

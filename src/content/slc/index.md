@@ -6,7 +6,9 @@ links:
 color: 3d6229
 -----------------
 
+<!--
 <img class="featured-image" src="/assets/slc-stories.jpg" srcset="/assets/slc-stories.jpg 400w, /assets/lg/slc-stories.jpg 1024w" alt="" />
+-->
 
 Sarah Lawrence is known for its long history of innovative, personalized academic programs and its inclusive, diverse community.
 

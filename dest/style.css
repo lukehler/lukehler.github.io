@@ -1,4 +1,4 @@
-/* --- lukehler v0.1.0 --- */
+/* --- lukehler v1.0.0 --- */
 
 /*	********************************
  *	LOOTSTRAP ELEMENTS
@@ -530,6 +530,19 @@ hr:before {
 .bg-inline {
   padding: 0.4rem 0.4rem 0.2rem;
 }
+.bg a,
+.bg-primary a,
+.bg-secondary a,
+.bg-light a {
+  color: inherit;
+  text-decoration: underline;
+}
+.bg a:hover,
+.bg-primary a:hover,
+.bg-secondary a:hover,
+.bg-light a:hover {
+  text-decoration: none;
+}
 @media screen and (max-width: 767px) {
   table.collapse tr,
   table.collapse th,
@@ -882,6 +895,13 @@ main a:hover {
 .project-links > :last-child {
   padding-bottom: 0;
 }
+.project-links a {
+  color: inherit;
+  text-decoration: underline;
+}
+.project-links a:hover {
+  text-decoration: none;
+}
 @media screen and (min-width: 768px) {
   .project-links {
     -ms-flex-align: end;
@@ -898,6 +918,7 @@ main a:hover {
   margin-bottom: 0.6rem;
   color: inherit;
   border-bottom-color: #fff;
+  text-decoration: none;
 }
 .project-links a:hover {
   border-bottom: 1px solid #fff;
