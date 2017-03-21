@@ -1089,7 +1089,8 @@ main a:hover {
   #cv-contact:after {
     content: "617.913.2299";
   }
-  #cv-contact .pdf {
+  #cv-contact .pdf,
+  #cv-contact .print {
     display: none;
   }
   #main-content a {
